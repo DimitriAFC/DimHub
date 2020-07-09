@@ -1,0 +1,32 @@
+@media all and (max-device-width: 780px) {
+     #monheader {
+         background-color: #fff;
+         height: 200px;
+         width: 100%;
+         box-shadow: 1px 1px 10px #e5e5e5;
+    }
+     .container {
+         width: 100%;
+         margin-left: auto;
+         margin-right: auto;
+         display: flex;
+    }
+     #monfooter {
+         background-color: red;
+         height: 70px;
+         width: 100%;
+         position: relative;
+         bottom: 0px;
+    }
+     input {
+         height:30px;
+         width:250px;
+    }
+     .liste_deroulante {
+         height:30px;
+         width:250px;
+    }
+     .header_title {
+         font-size:13px;
+    }
+     

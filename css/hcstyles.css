@@ -1,0 +1,177 @@
+/* Page html */
+ * {
+     font-family:Roboto;
+     margin:0;
+     padding:0;
+}
+ body, html {
+     margin: 0;
+     display: flex;
+     flex-direction: column;
+     min-height: 100vh;
+     background: #f6f6f6;
+}
+ a {
+     text-decoration: none;
+     color: #fff;
+}
+/* LArgeur des container */
+ .container {
+     width: 1000px;
+     margin-left: auto;
+     margin-right: auto;
+     display: flex;
+     justify-content: center;
+}
+/* Header */
+ #monheader {
+     background-color: white;
+     height: 200px;
+     width: 100%;
+     box-shadow: 1px 1px 10px #e5e5e5;
+}
+ .header_title {
+     font-weight: bold;
+     position:absolute;
+     top:160px;
+}
+ .utilisateur {
+     display:none;
+}
+/* Boutons */
+ .bouton_accueil {
+     background-color: red;
+     border-radius: 10px;
+     color: #fff;
+     padding: 5px 10px 5px 10px;
+     box-shadow: 10px 10px 10px lightgrey;
+     margin-top: 30px;
+}
+ .bouton_page {
+     background-color: red;
+     border-radius: 10px;
+     color: #fff;
+     padding: 5px 10px 5px 10px;
+     box-shadow: 10px 10px 10px lightgrey;
+     margin-top: 30px;
+}
+/* Pied de page */
+ #monfooter {
+     background-color: red;
+     height: 70px;
+     width: 100%;
+     position: relative;
+     bottom: 0px;
+     margin-top:20px;
+}
+ .infosfooter {
+     text-align: center;
+}
+ .infosfooter a {
+     color: #fff;
+     border-radius: 5px;
+     margin: 10px;
+     position: relative;
+     top: 20px;
+}
+ .infosfooter a:hover {
+     color: black;
+     border-radius: 5px;
+     margin: 10px;
+}
+/* Logo */
+ .logo {
+     height: 150px;
+     width: 150px;
+}
+/* Formulaire de connexion */
+ .form {
+     text-align: center;
+}
+ label {
+     display: block;
+     margin-bottom: 20px;
+     margin-top: 20px;
+     font-weight: bold;
+}
+ input {
+     height: 30px;
+     width: 350px;
+     border: 1px solid red;
+     text-align: center;
+}
+ .liste_deroulante {
+     height: 30px;
+     width: 350px;
+     border: 1px solid red;
+     text-align: center;
+}
+/* Bouton formulaire */
+ .bouton_envoyer {
+     color: #fff;
+     background: black;
+     width: 150px;
+     border: 1px solid #fff;
+     margin-top: 60px;
+     border-radius: 7px;
+     font-size: 14px;
+}
+ .bouton_envoyer:hover {
+     color: #fff;
+     background: red;
+     width: 150px;
+     margin-top: 60px;
+}
+ .bouton_enregistrer {
+     color: #fff;
+     background: black;
+     width: 150px;
+     border: 1px solid #fff;
+     margin-top: 40px;
+     border-radius: 7px;
+     font-size: 14px;
+     margin-bottom: 50px;
+}
+ .bouton_enregistrer:hover {
+     color: #fff;
+     background: red;
+     width: 150px;
+     margin-top: 40px;
+     margin-bottom: 50px;
+}
+ .bouton_renvoyer {
+     color: #fff;
+     background: black;
+     width: 200px;
+     border: 1px solid #fff;
+     margin-top: 40px;
+     border-radius: 7px;
+     font-size: 14px;
+     margin-bottom: 200px;
+}
+ .bouton_renvoyer:hover {
+     color: #fff;
+     background: red;
+     width: 200px;
+     margin-top: 40px;
+     margin-bottom: 200px;
+}
+/* S'identifier ou mot de passe oublié */
+ .informations {
+     text-align: center;
+     margin-top: 20px;
+     margin-bottom:50px;
+}
+ .informations a {
+     color: black;
+     border-radius: 5px;
+     text-decoration: none;
+     margin: 10px;
+}
+ .informations a:hover {
+     color: red;
+     border-radius: 5px;
+     text-decoration: none;
+     margin: 10px;
+}
+ 

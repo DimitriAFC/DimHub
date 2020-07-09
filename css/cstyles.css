@@ -1,0 +1,247 @@
+/* Page html */
+ * {
+     font-family:Roboto;
+     margin:0;
+     padding:0;
+}
+ body, html {
+     margin: 0;
+     display: flex;
+     flex-direction: column;
+     min-height: 100vh;
+     background: #f6f6f6;
+}
+ a {
+     text-decoration: none;
+     color: #fff;
+}
+/* Largeur des container */
+ .container {
+     width: 1000px;
+     margin-left: auto;
+     margin-right: auto;
+     display: flex;
+     justify-content: center;
+}
+/* Header */
+ #monheader {
+     background-color: white;
+     height: 150px;
+     width: 100%;
+     box-shadow: 1px 1px 10px #e5e5e5;
+}
+ .header_title {
+     display:none;
+}
+ .user {
+     height:20px;
+     width:20px;
+     position:absolute;
+     top:20px;
+     right:300px;
+}
+ .close_session {
+     height:20px;
+     width:20px;
+     position:absolute;
+     top:80px;
+     right:300px;
+}
+ .settings {
+     height:20px;
+     width:20px;
+     position:absolute;
+     top:50px;
+     right:300px;
+}
+ .bonjour {
+     font-weight: bold;
+     font-size:14px;
+     position:absolute;
+     top:23px;
+     right:138px;
+}
+ .end_session {
+     color:red;
+     text-decoration: underline;
+     font-weight: bold;
+     font-size:14px;
+     position:absolute;
+     top:82px;
+     right:190px;
+}
+ .user_settings {
+     color:black;
+     text-decoration: underline;
+     font-weight: bold;
+     font-size:14px;
+     position:absolute;
+     top:52px;
+     right:145px;
+}
+/* Pied de page */
+ #monfooter {
+     background-color: red;
+     height: 70px;
+     width: 100%;
+     position: relative;
+     bottom: 0px;
+     margin-top:20px;
+}
+ .infosfooter {
+     text-align: center;
+}
+ .infosfooter a {
+     color: #fff;
+     border-radius: 5px;
+     margin: 10px;
+     position: relative;
+     top: 20px;
+}
+ .infosfooter a:hover {
+     color: black;
+     border-radius: 5px;
+     margin: 10px;
+}
+/* Logo */
+ .logo {
+     height: 120px;
+     width: 120px;
+     position:absolute;
+     left:20px;
+}
+/* Section presentation GBAF */
+ #presentation_gbaf {
+     text-align:center;
+     margin-top: 50px;
+     margin-bottom:80px;
+}
+/* Span */
+ span {
+     color:red;
+}
+ #presentation_gbaf>h1 {
+     color:red;
+}
+ #presentation_gbaf>p {
+     margin:10px;
+}
+ .img_presentation {
+     Height:300px;
+     width:700px;
+     border:1px solid black;
+}
+/* Section presentation partenaires */
+ #presentation_partenaires {
+     text-align: center;
+     margin-bottom:50px;
+}
+ #presentation_partenaires>h2 {
+     color:red;
+     margin:10px;
+}
+/* Section presentation acteurs */
+ .presentation_acteurs {
+     height:200px;
+     width:800px;
+     background-color:#e7e7e7;
+     box-shadow: 1px 1px 6px 1px #e7e7e7;
+     margin-bottom:100px;
+}
+ .logo_acteurs {
+     height:100px;
+     width:250px;
+     border:1px solid black;
+     margin-left:20px;
+     margin-top:20px;
+}
+ .presentation_acteurs>h3 {
+    Color:red;
+     margin-left:300px;
+     margin-top:-100px;
+}
+ .presentation_acteurs>p {
+     margin-top:20px;
+     height:10px;
+     width:500px;
+     margin-left:300px;
+}
+ .bouton_lire {
+     color:#fff;
+     background-color:red;
+     box-sizing: border-box;
+     padding:7px 7px 7px 7px;
+     border-radius:10px;
+     position:relative;
+     top:90px;
+     left:700px;
+}
+ .bouton_lire {
+     color:#fff;
+     background-color:red;
+     box-sizing: border-box;
+     padding:7px 7px 7px 7px;
+     border-radius:10px;
+     position:relative;
+     top:90px;
+     left:700px;
+}
+ .bouton_lire:hover {
+     color:#fff;
+     background-color:black;
+     box-sizing: border-box;
+     padding:7px 7px 7px 7px;
+     border-radius:10px;
+     position:relative;
+     top:90px;
+     left:700px;
+}
+/* Section presentation acteurs page */
+ .act_presentation {
+     height: 600px;
+     width: 1100px;
+     background-color: #e7e7e7;
+     border-radius: 5px;
+     margin-top: 50px;
+     text-align:center;
+}
+/* Session commentaires*/
+ .commentaires {
+     height:500px;
+     width: 1100px;
+     background-color: #e7e7e7;
+     margin-top: 50px;
+     margin-bottom:50px;
+     border-radius: 5px;
+}
+/* images de présentation */
+ .act_img {
+     height:100px;
+     width:300px;
+     border:1px solid black;
+     margin-top:30px;
+}
+/* Titre H2 Présentation */
+ .act_presentation>h2 {
+     color:red;
+     margin-top:50px;
+}
+/* Texte H2 Présentation */
+ .act_presentation>p {
+     height:300px;
+     width:800px;
+     margin-top:30px;
+     margin-left:100px;
+}
+/* Bouton retour */
+ .act_presentation>a {
+     background-color:red;
+     padding:5px 10px 5px 10px ;
+     border-radius:2px;
+}
+ .act_presentation>a:hover {
+     background-color:black;
+     padding:5px 10px 5px 10px ;
+     border-radius:2px;
+}
+ 
