@@ -10,19 +10,71 @@
    </head>
    <body>
       <?php require('include/header.php')?>
+      <?php require('include/database.php')?>
+      <?php
+         // 1 On verifie que le formulaire est valide
+         if(isset($_POST['connectForm']))
+         {
+              $usernameConnect = htmlspecialchars($_POST['usernameConnect']);
+               $passwordConnect = password_hash($_POST['passwordConnect'], PASSWORD_DEFAULT);
+            //2 On verifie que les champs ne sont pas vide
+            if(!empty($_POST['usernameConnect']) AND !empty($_POST['passwordConnect']))
+            {
+               //3  On verifie que l'utilisateur et le mot de passe entré existent
+         
+               // On séléctionne tout dans la table utilisateur dans le champs username
+               $requser = $bdd -> prepare('SELECT * FROM utilisateurs WHERE username = ?');
+               // La requete va chercher l'username indiqué dans la base de donnés voir si il existe
+               $requser -> execute(array($_POST['usernameConnect']));
+               //On lance la recherche
+               $user = $requser->fetch();
+               //4 Si l'utilisateur existe alors on compare l'username entré avec le mot de passe enregistré dans la BDD
+               if($user AND password_verify($_POST['passwordConnect'], $user['password']))
+               {
+                    session_start();
+                    $_SESSION['id'] = $user['Id'];
+                    $_SESSION['username'] = $user['username'];
+                    $_SESSION['nom'] = $user['Nom'];
+                    $_SESSION['prenom'] = $user['Prenom'];
+                     header("Location:profil.php?id=".$_SESSION['id']);
+               }
+         //3
+         else 
+         {
+               $msgErreur = ' Verifiez vos identifiant !';
+            }
+            }
+         //2
+         else
+            {
+               $msgErreur ='Veuillez completez les champs !';
+            }
+         }
+         // 1
+         else 
+         {
+            echo '';
+         }
+         
+         
+         ?>
       <main id="connexion">
          <div class="container">
             <h2 class="bouton_accueil">Connexion</h2>
          </div>
          <div class="container">
             <div class="form">
-               <form>
-                  <label for="username">Username :</label>
-                  <input type="text" id="username"  required>
-                  <label for="motdepasse">Mot de passe : </label>
-                  <input type="password" id="motdepasse"  required>
+               <form method="post">
+                  <label for="usernameConnect">Username :</label>
+                  <input type="text" id="usernameConnect"  name="usernameConnect" required>
+                  <label for="passwordConnect">Mot de passe : </label>
+                  <input type="password" id="passwordConnect"  name="passwordConnect" required>
+                  <?php if(isset($_GET['success'])){ ?>
+                  <p style='color:green; font-weight:bold;'><?= $_GET['message'] ?></p>
+                  <?php } ?></p>
+                  <p><?php if(isset($msgErreur)) { echo  $msgErreur; }  else { echo "";}?></p>
                   <p>
-                     <input class="bouton_envoyer" type="submit" value="Envoyer">
+                     <input class="bouton_envoyer" type="submit" name ="connectForm" value="Envoyer">
                   </p>
                </form>
             </div>

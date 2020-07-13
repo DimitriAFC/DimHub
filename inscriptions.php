@@ -20,7 +20,6 @@
             <div class="form">
 
                <?php require ('include/database.php'); ?>
-
 <?php
 // 1 Vérification du formulaire
 if (isset($_POST['valideForm']) and $_POST['valideForm'])
