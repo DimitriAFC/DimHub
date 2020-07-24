@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!doctype html>
 <html lang="fr">
    <head>
@@ -14,7 +15,7 @@
             <h1>Présentation du Groupement Banque et Assurance Française</h1>
             <p>Le Groupement Banque Assurance Français​ (GBAF) est une fédération  représentant les 6 grands groupes français  </p>
             <p><span>●</span> BNP Paribas ;  <span>●</span> BPCE ;  <span>●</span> Crédit Agricole ;  <span>●</span> Crédit Mutuel-CIC ;  <span>●</span> Société Générale ;   <span>●</span> La Banque Postale.</p>
-            <img class="img_presentation" src="images/image_presentation.jpg" alt="GBAF">
+            <img class="img_presentation" src="images/3041.jpg" alt="GBAF">
             <p> Même s’il existe une forte concurrence entre ces entités, elles vont toutes travailler  de la même façon pour gérer près
                de 80 millions de comptes sur le territoire  national.  Le GBAF est le représentant de la profession bancaire et des assureurs sur tous
                les axes de la réglementation financière française. Sa mission est de promouvoir  l'activité
@@ -37,7 +38,7 @@
                   Nous proposons à des personnes issues de tout milieu de devenir entrepreneur grâce à un crédit et un accompagnement
                   professionnel et personnalisé.
                </p>
-               <a class="bouton_lire" href="formationco.php">Lire la suite</a>
+               <a class="bouton_lire" href="acteurs.php?id=2">Lire la suite</a>
             </div>
             <div class="presentation_acteurs">
                <img class="logo_acteurs" src="images/protectpeople.png" alt="protectpeople">
@@ -45,7 +46,7 @@
                <p>Protectpeople finance la solidarité nationale.
                   Nous appliquons le principe édifié par la Sécurité sociale française en 1945 : permettre à chacun de bénéficier d’une protection sociale.
                </p>
-               <a class="bouton_lire" href="protectpeople.php">Lire la suite</a>
+               <a class="bouton_lire" href="acteurs.php?id=3">Lire la suite</a>
             </div>
             <div class="presentation_acteurs">
                <img class="logo_acteurs" src="images/Dsa_france.png" alt="DSAFrance">
@@ -54,7 +55,7 @@
                   Nous accompagnons les entreprises dans les étapes clés de leur évolution.
                   Notre philosophie : s’adapter à chaque entreprise.
                </p>
-               <a class="bouton_lire" href="dsafrance.php">Lire la suite</a>
+               <a class="bouton_lire" href="acteurs.php?id=4">Lire la suite</a>
             </div>
             <div class="presentation_acteurs">
                <img class="logo_acteurs" src="images/CDE.png" alt="CDE">
@@ -62,7 +63,7 @@
                <p>La CDE (Chambre Des Entrepreneurs) accompagne les entreprises dans leurs démarches de formation.
                   Son président est élu pour 3 ans par ses pairs, chefs d’entreprises et présidents des CDE.
                </p>
-               <a class="bouton_lire" href="cde.php">Lire la suite</a>
+               <a class="bouton_lire" href="acteurs.php?id=1">Lire la suite</a>
             </div>
          </section>
       </div>

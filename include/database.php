@@ -2,7 +2,7 @@
 
     // Connexion à la base de donnée 
     $host       = "localhost";
-    $dbname     = "GBAF";
+    $dbname     = "gbaf";
     $user       = "root";
     $password   = "";
 

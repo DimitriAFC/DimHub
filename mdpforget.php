@@ -1,16 +1,4 @@
-<!doctype html>
-<html lang="fr">
-   <head>
-      <meta charset="utf-8">
-      <link type="text/css" rel="stylesheet" href="css/hcstyles.css" />
-      <link type="text/css" rel="stylesheet" href="css/hcstylesmobiles.css" />
-      <meta name=viewport content="width=device-width, initial-scale=1">
-      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-      <title>Projet 3</title>
-   </head>
-   <body>
-      <?php require('include/header.php');?>
-      <?php require('include/database.php');?>
+<?php require('include/database.php');?>
       <?php
          // 1 On teste les variables du formulaire 
          if (isset($_POST['valideRecup'], $_POST['recupUsername']))
@@ -20,13 +8,17 @@
             {
          // 3 On cherche dans la BDD que l'username existe       
                   $user = htmlspecialchars($_POST['recupUsername']);
-                  $userExiste = $bdd -> prepare('SELECT id FROM utilisateurs WHERE username = ?');
-                  $userExiste -> execute (array($user));
-                  $userExiste = $userExiste -> rowCount();
-         //4 Si l'username existe =1, on redirige vers la modification
-                  if($userExiste == 1)
+
+                  $requser = $bdd -> prepare('SELECT * FROM utilisateurs WHERE username = ?');
+                  $requser -> execute (array($user));
+                  $userExiste = $requser -> fetch();
+          
+         //4 Si l'username existe , on redirige vers la question secrète
+
+                  if($userExiste)
                   {
-                           header('location:mdpmodify.php');
+                  
+                           header("location:answer.php?id=".$userExiste['id']);
                            exit;
                   }
          // 3 Sinon message d'erreur
@@ -48,6 +40,19 @@
          
          
          ?>
+
+<!doctype html>
+<html lang="fr">
+   <head>
+      <meta charset="utf-8">
+      <link type="text/css" rel="stylesheet" href="css/hcstyles.css" />
+      <link type="text/css" rel="stylesheet" href="css/hcstylesmobiles.css" />
+      <meta name=viewport content="width=device-width, initial-scale=1">
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+      <title>Projet 3</title>
+   </head>
+   <body>
+      <?php require('include/header.php');?>
       <main id="connexion">
          <div class="container">
             <h2 class="bouton_page"><a href="index.php">Revenir à l'accueil</a></h2>
@@ -66,3 +71,4 @@
       <?php require('include/footer.php')?>
    </body>
 </html>
+

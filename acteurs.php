@@ -1,3 +1,33 @@
+<?php session_start(); ?>
+<?php require('include/database.php') ?>
+<?php
+
+//1
+if(isset($_GET['id']))
+{
+   // Récupération de la table acteurs
+   $reqAct = $bdd ->prepare('SELECT * FROM acteurs WHERE id=?');
+
+   $reqAct -> execute(array($_GET['id']));
+
+   $acteurs = $reqAct -> fetch();
+
+// Je nomme des variables
+   $image =  $acteurs["image"];
+   $name = $acteurs['nom'];
+   $desc = $acteurs['description'];
+   $id = $acteurs['id'];
+}
+//1
+else
+{
+
+}
+?>
+
+
+
+
 <!doctype html>
 <html lang="fr">
    <head>
@@ -9,26 +39,67 @@
    </head>
    <body>
       <?php require('include/header.php')?>
+      <div class="container"><?php if(isset($_GET['message'])) { echo "<span style=color:green;font-weight:bold;>" .$_GET['message']. "</span>"; } ?></div>
       <div class="container">
          <section class="act_presentation">
-            <img class="act_img" src="images/formation_co.png" alt="formation_co">
-            <h2>Formation & Co</h2>
-            <p>Formation&co est une association française présente sur tout le territoire.
-               Nous proposons à des personnes issues de tout milieu de devenir entrepreneur grâce à un crédit et un accompagnement professionnel et personnalisé.
-               Notre proposition :<br/><br/><br/>
-               <span>⦁</span> Un financement jusqu’à 30 000€ ;<br/>
-               <span>⦁</span> Un suivi personnalisé et gratuit ;<br/>
-               <span>⦁</span> Une lutte acharnée contre les freins sociétaux et les stéréotypes.<br/><br/><br/>
-               Le financement est possible, peu importe le métier : coiffeur, banquier, éleveur de chèvres… . Nous collaborons avec des personnes talentueuses et motivées.
-               Vous n’avez pas de diplômes ? Ce n’est pas un problème pour nous ! Nos financements s’adressent à tous.
-            </p>
+            <img class="act_img" src=<?php echo 'images/' .$image; ?> alt="image_acteur">
+            <h2><?php echo $name; ?></h2>
+            <p><?php echo $desc; ?></p>
+            
             <a href="partenaires.php"> Retour </a>
-         </section>
-      </div>
+           
+         </section> </div>
+
+
+
+
+
+    
       <div class="container">
+
+
          <section class="commentaires">
-         </section>
+
+            <div class="espacelike">
+
+            <div class="like"><a href="#"></a></div>
+
+            <img class="img_like" src="images/like.png">
+
+            <div class="dislike"><a href="#"></a></div>
+            <img class="img_dislike" src="images/dislike.png">
+
       </div>
+            <div class="coms">
+               <div class="commentaires_coms">
+               </div>
+
+
+               
+               <?php
+
+
+
+               $reqCom = $bdd ->prepare("SELECT * FROM commentaires WHERE id_acteurs=? ");
+               $reqCom -> execute(array($_GET['id']));
+
+               $com = $reqCom ->fetch();
+
+               {?>
+
+                <b><span style="color:red;"> Postée le :</b></span>  <?php echo $com['date']; ?>  <br/>
+                 <b><span style="color:red;"> Pseudo :</b></span>  <?php echo $com['username'];?>  <br/>
+                 <b><span style="color:red;"> Message :</b></span>  <?php echo $com['commentaire'];?>  <br/>
+
+               <?php }?>
+               
+
+            </div>
+           
+
+            <a class="ajout_coms" href="formulaire.php?id=<?php echo $id; ?>" target="blank">Nouveau commentaire</a>
+         </section></div>
+   
       <?php require('include/footer.php')?>
    </body>
 </html>

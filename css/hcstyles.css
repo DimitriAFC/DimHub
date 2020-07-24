@@ -174,4 +174,15 @@
      text-decoration: none;
      margin: 10px;
 }
+/* Message succés index */
+
+.msg {
+     color:#fff;
+     font-weight:bold;
+     background-color:green;
+     padding:5px 49px;
+     margin-top:10px;
+     border-radius:5px;
+}
+
  

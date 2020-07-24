@@ -1,15 +1,3 @@
-<!doctype html>
-<html lang="fr">
-   <head>
-      <meta charset="utf-8">
-      <link type="text/css" rel="stylesheet" href="css/hcstyles.css" />
-      <link type="text/css" rel="stylesheet" href="css/hcstylesmobiles.css" />
-      <meta name=viewport content="width=device-width, initial-scale=1">
-      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-      <title>Projet 3</title>
-   </head>
-   <body>
-      <?php require('include/header.php')?>
       <?php require('include/database.php')?>
       <?php
          // 1 On verifie que le formulaire est valide
@@ -28,26 +16,30 @@
                $requser -> execute(array($_POST['usernameConnect']));
                //On lance la recherche
                $user = $requser->fetch();
+         
                //4 Si l'utilisateur existe alors on compare l'username entré avec le mot de passe enregistré dans la BDD
                if($user AND password_verify($_POST['passwordConnect'], $user['password']))
                {
                     session_start();
                     $_SESSION['id'] = $user['Id'];
                     $_SESSION['username'] = $user['username'];
-                    $_SESSION['nom'] = $user['Nom'];
-                    $_SESSION['prenom'] = $user['Prenom'];
-                     header("Location:profil.php?id=".$_SESSION['id']);
+                    $_SESSION['nom'] = $user['nom'];
+                    $_SESSION['prenom'] = $user['prenom'];
+                    // A changer avec la page profil.php
+                     header("Location:partenaires.php");
+                     exit;
                }
+                  
          //3
          else 
          {
-               $msgErreur = ' Verifiez vos identifiant !';
+               $msgErreur = "<span style='color:red; font-weight:bold;'>Verifier vos identifiants !</span> " ;
             }
             }
          //2
          else
             {
-               $msgErreur ='Veuillez completez les champs !';
+               $msgErreur = "<span style='color:red; font-weight:bold;'>Merci de complêter les champs !</span> " ;
             }
          }
          // 1
@@ -58,6 +50,19 @@
          
          
          ?>
+<!doctype html>
+<html lang="fr">
+   <head>
+      <meta charset="utf-8">
+      <link type="text/css" rel="stylesheet" href="css/hcstyles.css" />
+      <link type="text/css" rel="stylesheet" href="css/hcstylesmobiles.css" />
+      <meta name=viewport content="width=device-width, initial-scale=1">
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+      <title>Projet 3</title>
+   </head>
+   <body>
+      <?php require('include/header.php')?>
+
       <main id="connexion">
          <div class="container">
             <h2 class="bouton_accueil">Connexion</h2>
@@ -69,10 +74,17 @@
                   <input type="text" id="usernameConnect"  name="usernameConnect" required>
                   <label for="passwordConnect">Mot de passe : </label>
                   <input type="password" id="passwordConnect"  name="passwordConnect" required>
-                  <?php if(isset($_GET['success'])){ ?>
-                  <p style='color:green; font-weight:bold;'><?= $_GET['message'] ?></p>
-                  <?php } ?></p>
+
+                    <?php if(isset($_GET['success'])){ ?>
+
+
+                  <p class="msg"><?= $_GET['message']?></p>
+
+                  <p><?php } ?></p>
+                  
                   <p><?php if(isset($msgErreur)) { echo  $msgErreur; }  else { echo "";}?></p>
+
+
                   <p>
                      <input class="bouton_envoyer" type="submit" name ="connectForm" value="Envoyer">
                   </p>

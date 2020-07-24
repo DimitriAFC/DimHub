@@ -1,3 +1,54 @@
+<?php require('include/database.php');?>
+
+<?php
+
+// 1 On verifie si les champs existent !
+if(isset($_POST['valideMdp']) && isset($_POST['motdepass']) && isset($_POST['motdepasscomfirm']) && isset($_GET['id']))
+{
+
+       $mdp = htmlspecialchars($_POST['motdepass']);
+        $mdpm = htmlspecialchars($_POST['motdepasscomfirm']);
+
+//2 On verfie que les champs ne sont pas vides
+   if(!empty($_POST['motdepass']) && !empty($_POST['motdepasscomfirm']))
+   {
+      //3 on verifie que les mots de passe sont identique 
+      if ($mdp == $mdpm)
+      {
+            $mdp = password_hash($_POST['motdepass'], PASSWORD_DEFAULT);
+            
+       
+
+             $modify = $bdd -> prepare("UPDATE utilisateurs SET password ='$mdp' WHERE id = ?");
+             $modify -> execute(array($_GET['id']));
+             $modify -> closeCursor();
+
+           header('Location: index.php?success=1&message=Votre mot de passe à été mise à jour');
+           exit;
+      }
+      //3
+      else 
+      {
+         $msgErreur = "<span style='color:red; font-weight:bold;'>Les mots de passe doivent être identique !</span> " ;
+      }
+
+   }
+//2
+else
+{
+  $msgErreur = "<span style='color:red; font-weight:bold;'>Certains champs sont vide !</span> " ;
+}
+}
+//1
+else
+{
+      echo  '';
+}
+
+
+?>
+
+
 <!doctype html>
 <html lang="fr">
    <head>
@@ -16,13 +67,15 @@
          </div>
          <div class="container">
             <div class="form">
-               <form>
+               <form method="post">
                   <label for="motdepasse">Nouveau mot de passe  :</label>
-                  <input type="password" id="motdepass"  required>
+                  <input type="password" id="motdepass"  name="motdepass" placeholder="Sécurisez votre mot de passe !" required>
                   <label for="motdepasscomfirm">Comfirmer mot de passe :</label>
-                  <input type="password" id="motdepasscomfirm"  required>
+                  <input type="password" id="motdepasscomfirm" name="motdepasscomfirm" placeholder="Les mots de passe doivent être identique"  required><br/>
+                   <p><?php if(isset($msgErreur)) { echo  $msgErreur; }  else { echo "";}?></p>
+                  <input class="bouton_renvoyer" type="submit" value="Valider" name="valideMdp">
                </form>
-               <input class="bouton_renvoyer" type="submit" value="Valider">
+               
             </div>
          </div>
       </main>
