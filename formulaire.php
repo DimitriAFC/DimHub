@@ -2,6 +2,21 @@
 <?php require('include/database.php') ?>
 <?php
 
+if(isset($_SESSION['username']))
+{
+
+}
+else
+{
+   header("Location:index.php");
+   exit;
+}
+
+
+
+?>
+<?php
+
 //1 On verifie que le GET passe
 if(isset($_GET['id']) AND !empty($_GET['id']))
 {
@@ -17,17 +32,17 @@ if(isset($_GET['id']) AND !empty($_GET['id']))
          // 3 On verifie que le message ne dépasse pas les 255 caractères
         if ($msglength <= 255)
         {
-
-         $commentaires = $bdd -> prepare('INSERT INTO commentaires (username, commentaire, id_acteurs) VALUES(?, ?, ?) ');
-         $commentaires->execute(array(
-            $user,
-            $message,
-            $idact
-            ));
-            $commentaires->CloseCursor();  
-            header("Location:acteurs.php?id=".$_GET['id']. "&message=Commentaire ajouté avec succées !");
-            exit;  
-
+         
+               $commentaires = $bdd -> prepare('INSERT INTO commentaires (username, commentaire, id_acteurs) VALUES(?, ?, ?) ');
+               $commentaires->execute(array(
+                  $user,
+                  $message,
+                  $idact
+                  ));
+                  $commentaires->CloseCursor();  
+                  header("Location:acteurs.php?id=".$_GET['id']. "&message=Commentaire ajouté avec succées !");
+                  exit;  
+             
         }
         //3
         else
@@ -67,14 +82,12 @@ else
       <?php require('include/header.php')?>
       <div class="container">
       <form class="formcoms" method="post">
+      <?php if(isset($erreur)) { echo "<span style='font-weight:bold;'> "  .$erreur. " </span>"; } ?></br>
             <label class="titreCommentaires" for="message">Ajoutez un commentaire </label><br/>
            <textarea class="inputcoms" type="text" placeholder="Votre commentaire (Max 255 caractères)" maxlength="255" name="message"></textarea><br/>
             
             <input class="btnCommentaires" type ="submit" value ="Envoyer" name ="comfirm"><br/><br/>
 
-
-
-            <?php if(isset($erreur)) { echo "<span style='font-weight:bold;'> "  .$erreur. " </span>"; } ?>
          </form>
 
     </div>

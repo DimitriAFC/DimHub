@@ -33,6 +33,7 @@
  .header_title {
      display:none;
 }
+
  .user {
      height:20px;
      width:20px;
@@ -57,9 +58,9 @@
  .bonjour {
      font-weight: bold;
      font-size:14px;
-     position:absolute;
+     position:relative;
      top:23px;
-     right:138px;
+     left:640px;
 }
  .end_session {
      color:red;
@@ -79,13 +80,14 @@
      top:52px;
      right:145px;
 }
+
 /* Pied de page */
  #monfooter {
      background-color: red;
      height: 70px;
      width: 100%;
      position: relative;
-     bottom: 0px;
+     top: 65px;
      margin-top:20px;
 }
  .infosfooter {
@@ -109,6 +111,10 @@
      width: 120px;
      position:absolute;
      left:20px;
+}
+
+.logo:hover{
+    opacity: 0.65;
 }
 /* Section presentation GBAF */
  #presentation_gbaf {
@@ -210,7 +216,6 @@
 }
 /* Session commentaires*/
  .commentaires {
-     height:500px;
      width: 1100px;
      background-color: #f1f1f1;
      margin-top: 50px;
@@ -327,26 +332,16 @@
 
     /* boutons like */
     .like{
-        color:#fff;
-        background-color: green;
+        color:green;
+        font-weight: bold;
+        background-color: #fff;
         height:20px;
         width:30px;
         border-radius: 5px;
         position:relative;
-        top:20px;
-        left:50px;
-       
-    }
-
-    .like:hover{
-        color:#fff;
-        background-color: greenyellow;
-        height:20px;
-        width:30px;
-        border-radius: 5px;
-        position:relative;
-        top:20px;
-        left:50px;
+        top:30px;
+        left:55px;
+        border:1px solid #d2d2d2;
        
     }
       /* image like */
@@ -355,50 +350,66 @@
           width:20px;
           position:relative;
           right:70px;
+          background-color: green;
+          padding:5px 5px;
+          border-radius: 3px;;
       }
+
+      .img_like:hover {
+        height:20px;
+        width:20px;
+        position:relative;
+        right:70px;
+        background-color: greenyellow;
+        padding:5px 5px;
+        border-radius: 3px;;
+    }
 
 
      /* boutons dislike */
      .dislike{
-        color:#fff;
-        background-color: red;
+        color:red;
+        font-weight: bold;
+        background-color:#fff;
         height:20px;
         width:30px;
         border-radius: 5px;
         position:relative;
-        left:140px;
-        bottom:24px;
+        left:145px;
+        bottom:26px;
+        border:1px solid #d2d2d2;
        
     }
 
-      /* boutons dislike */
-      .dislike:hover{
-        color:#fff;
-        background-color: lightpink;
-        height:20px;
-        width:30px;
-        border-radius: 5px;
-        position:relative;
-        left:140px;
-        bottom:24px;
-       
-    }
  /* image dislike */
  .img_dislike {
     height:20px;
     width:20px;
     position:relative;
     left:22px;
-    bottom:42px;
+    bottom:56px;
+    background-color:red;
+    padding:5px 5px;
+    border-radius:3px;
+}
+.img_dislike:hover {
+    height:20px;
+    width:20px;
+    position:relative;
+    left:22px;
+    bottom:56px;
+    background-color:lightcoral;
+    padding:5px 5px;
+    border-radius:3px;
 }
 
  /* espace commentaires */
  .coms {
-     height:350px;
      width: 600px;
      background-color: #fff;
-     margin-top:20px;
+     margin-top:50px;
      margin-left:200px;
+     margin-bottom:30px;
      border: 1px solid #d2d2d2;
  }
 
@@ -417,17 +428,58 @@
      background-color: red;
      padding:5px 10px;
      border-radius: 5px;
-     position:relative;
-     bottom:420px;
-   
  }
 
  .ajout_coms:hover{
     background-color: black;
     padding:5px 10px;
     border-radius: 5px;
-    position:relative;
-    bottom:420px;
   
 }
 
+.addComs
+{
+    position:relative;
+    bottom:90px;
+    right:330px;
+}
+
+  /* decoration commentaires */
+.message_coms {
+    font-size:14px;
+    text-align:left;
+    margin-top:15px;
+    margin-left:10px;
+    margin-right:10px;
+    margin-bottom:10px;
+    background-color:#fcfcfc;
+    border: 1px solid #e7e7e7;
+    border-radius : 5px;
+    padding-top:5px;
+    padding-left:5px;
+    
+}
+  /* nombres commentaires */
+.nbrComs
+{
+    color:red;
+    font-weight: bold;
+    position:relative;
+    bottom:130px;
+    right:690px;
+    background-color: #fff;
+    height:50px;
+    border-radius:5px;
+    border: 1px solid #d2d2d2;
+    text-align: center;
+    padding-top:10px;
+}
+
+/* Message d'erreurs */
+.msg_erreur
+{
+    margin-top:20px;
+    border: 1px solid #d2d2d2;
+    background-color: #fcfcfc;
+    padding: 5px 5px;
+}

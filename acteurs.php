@@ -2,7 +2,31 @@
 <?php require('include/database.php') ?>
 <?php
 
-//1
+if(isset($_SESSION['username']))
+{
+
+}
+else
+{
+   header("Location:index.php");
+   exit;
+}
+
+
+
+?>
+<?php
+
+
+         $checkart = $bdd -> prepare("SELECT * FROM acteurs WHERE id=?");
+         $checkart -> execute(array($_GET['id']));
+
+        //2 Si l'article existe (==1)
+        if($checkart -> rowCount() == 1)
+        {
+
+        
+//2
 if(isset($_GET['id']))
 {
    // Récupération de la table acteurs
@@ -17,12 +41,32 @@ if(isset($_GET['id']))
    $name = $acteurs['nom'];
    $desc = $acteurs['description'];
    $id = $acteurs['id'];
+
 }
-//1
+//2
 else
 {
 
 }
+}
+//1
+else
+{
+   header("Location:partenaires.php");
+   exit;
+}
+?>
+<?php
+
+      $likes = $bdd->prepare("SELECT id FROM likes WHERE id_acteurs=?");
+      $likes -> execute(array($id));
+      $likes = $likes-> rowCount();
+
+      $dislikes = $bdd->prepare("SELECT id FROM dislikes WHERE id_acteurs=?");
+      $dislikes -> execute(array($id));
+      $dislikes = $dislikes -> rowCount();
+
+      
 ?>
 
 
@@ -39,14 +83,16 @@ else
    </head>
    <body>
       <?php require('include/header.php')?>
-      <div class="container"><?php if(isset($_GET['message'])) { echo "<span style=color:green;font-weight:bold;>" .$_GET['message']. "</span>"; } ?></div>
+      <div class="container"><div class="msg_erreur"><?php if(isset($_GET['message'])) { echo "<span style=color:green;font-weight:bold;>" .$_GET['message']. "</span>"; } ?>
+      <?php if(isset($_GET['erreur'])) { echo "<span style=color:red;font-weight:bold;>" .$_GET['erreur']. "</span>"; } ?>
+      <?php if(isset($_GET['succes'])) { echo "<span style=color:red;font-weight:bold;>" .$_GET['succes']. "</span>"; } ?></div></div>
       <div class="container">
          <section class="act_presentation">
             <img class="act_img" src=<?php echo 'images/' .$image; ?> alt="image_acteur">
             <h2><?php echo $name; ?></h2>
             <p><?php echo $desc; ?></p>
             
-            <a href="partenaires.php"> Retour </a>
+            <a   href="partenaires.php"> Retour </a>
            
          </section> </div>
 
@@ -62,34 +108,51 @@ else
 
             <div class="espacelike">
 
-            <div class="like"><a href="#"></a></div>
 
-            <img class="img_like" src="images/like.png">
+            <div class="like"><p><?= $likes ?></p></div>
 
-            <div class="dislike"><a href="#"></a></div>
-            <img class="img_dislike" src="images/dislike.png">
+            <a href="php/votes.php?type=1&id=<?= $_GET['id'] ?>"><img class="img_like" src="images/like.png"></a>
+
+            <div class="dislike"><p><?= $dislikes ?></p></div>
+
+            <a href="php/votes.php?type=2&id=<?= $_GET['id'] ?>"><img class="img_dislike" src="images/dislike.png"></a>
+            <div class="addComs"><a class="ajout_coms" href="formulaire.php?id=<?php echo $id; ?>" target="blank">Nouveau commentaire</a></div>
+               <?php
+
+               $commentaires = $bdd -> prepare("SELECT COUNT(*) AS nb_com  FROM commentaires WHERE id_acteurs=?");
+               $commentaires -> execute(array($_GET ['id']));
+               $donnees = $commentaires -> fetch();
+               
+
+
+               ?>
+      
+
+            <div class="nbrComs"><p>   <?php echo $donnees['nb_com']; ?> <span style="color:black;">Commentaires</span></p></div>
 
       </div>
             <div class="coms">
-               <div class="commentaires_coms">
-               </div>
+               <div class="commentaires_coms"><p>Aperçu des avis sur <?php echo $name; ?></p>
 
+               </div>
 
                
                <?php
 
 
 
-               $reqCom = $bdd ->prepare("SELECT * FROM commentaires WHERE id_acteurs=? ");
+               $reqCom = $bdd ->prepare("SELECT * FROM commentaires WHERE id_acteurs=? ORDER BY date DESC");
                $reqCom -> execute(array($_GET['id']));
 
-               $com = $reqCom ->fetch();
+               $com = $reqCom ->fetchAll();
+               foreach($com as $index => $user)
 
                {?>
-
-                <b><span style="color:red;"> Postée le :</b></span>  <?php echo $com['date']; ?>  <br/>
-                 <b><span style="color:red;"> Pseudo :</b></span>  <?php echo $com['username'];?>  <br/>
-                 <b><span style="color:red;"> Message :</b></span>  <?php echo $com['commentaire'];?>  <br/>
+                  <div class="message_coms">
+                <b><span style="color:red;"> Postée le :</b></span>  <?php echo $user['date']; ?>  <br/>
+                 <b><span style="color:red;"> Pseudo :</b></span>  <?php echo $user['username'];?>  <br/>
+                 <b><span style="color:red;"> Message :</b></span>  <?php echo $user['commentaire'];?>  <br/><br/>
+                 </div>
 
                <?php }?>
                
@@ -97,7 +160,7 @@ else
             </div>
            
 
-            <a class="ajout_coms" href="formulaire.php?id=<?php echo $id; ?>" target="blank">Nouveau commentaire</a>
+           
          </section></div>
    
       <?php require('include/footer.php')?>
