@@ -1,6 +1,7 @@
-               <?php require ('include/database.php'); ?>
+<?php require ('include/database.php'); ?>
+	<?php
 
-<?php
+    
 // 1 Vérification du formulaire
 if (isset($_POST['valideForm']) and $_POST['valideForm'])
 {
@@ -86,78 +87,63 @@ else
 }
 
 ?>
-<!doctype html>
-<html lang="fr">
-   <head>
-      <meta charset="utf-8">
-      <link type="text/css" rel="stylesheet" href="css/hcstyles.css" />
-      <link type="text/css" rel="stylesheet" href="css/hcstylesmobiles.css" />
-      <meta name=viewport content="width=device-width, initial-scale=1">
-      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-      <title>Projet 3</title>
-   </head>
-   <body>
+		<!doctype html>
+		<html lang="fr">
 
-      <?php require ('include/header.php'); ?>
+		<head>
+			<meta charset="utf-8">
+			<link type="text/css" rel="stylesheet" href="css/hcstyles.css" />
+			<link type="text/css" rel="stylesheet" href="css/hcstylesmobiles.css" />
+			<meta name=viewport content="width=device-width, initial-scale=1">
+			<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+			<title>Projet 3</title>
+		</head>
 
-      <main id="connexion">
-         <div class="container">
-            <h2 class="bouton_page"><a href="index.php">Revenir à l'accueil</a></h2>
-         </div>
-         <div class="container">
-            <div class="form">
-
-
-
-
-             <form  method="post">
-                  <label for="nom">Nom :</label>
-                  <input type="text" id="nom" name="nom" placeholder="Ex: Dupont" value ='<?php if (isset($nom))
+		<body>
+			<?php require ('include/header.php'); ?>
+				<main id="connexion">
+					<div class="container">
+						<h2 class="bouton_page"><a href="index.php">Revenir à l'accueil</a></h2> </div>
+					<div class="container">
+						<div class="form">
+							<form method="post">
+								<label for="nom">Nom :</label>
+								<input type="text" id="nom" name="nom" placeholder="Ex: Dupont" value='<?php if (isset($nom))
 {
     echo $nom;
 } ?>' required>
-                  <label for="Premon">Prenom :</label>
-                  <input type="text" id="Prenom" name="prenom" placeholder="Ex: Martin" value ='<?php if (isset($prenom))
+								<label for="Premon">Prenom :</label>
+								<input type="text" id="Prenom" name="prenom" placeholder="Ex: Martin" value='<?php if (isset($prenom))
 {
     echo $prenom;
 } ?>' required>
-                  <label for="username">Username (4 à 20 caractère) :</label>
-                  <input type="text" id="username" name="username" placeholder="Ex: Cookie" minlength="4" maxlength="20" value ='<?php if (isset($username))
+								<label for="username">Username (4 à 20 caractère) :</label>
+								<input type="text" id="username" name="username" placeholder="Ex: Cookie" minlength="4" maxlength="20" value='<?php if (isset($username))
 {
     echo $username;
 } ?>' required>
-                  <label for="mdp">Mot de passe (4 à 30 caractère): </label>
-                  <input type="password" id="mdp" name="mdp" placeholder="Pensez à sécuriser le mot de passe" minlength="4" maxlength="30" required>
-                  <label for="mdp2">Comfirmer le Mot de passe : </label>
-                  <input type="password" id="mdp2" name="mdp2" placeholder="Verifiez que vos mot de passe soient identique" minlength="4" maxlength="30" required>
-                  <label for="choix_question">Choisissez une question secrète: </label>
-                  <input type="text" id="question" name="questionSelect" placeholder="Ex: Mon lieu de naissance" minlength="8" value ='<?php if (isset($questionSelect))
+								<label for="mdp">Mot de passe (4 à 30 caractère): </label>
+								<input type="password" id="mdp" name="mdp" placeholder="Pensez à sécuriser le mot de passe" minlength="4" maxlength="30" required>
+								<label for="mdp2">Comfirmer le Mot de passe : </label>
+								<input type="password" id="mdp2" name="mdp2" placeholder="Verifiez que vos mot de passe soient identique" minlength="4" maxlength="30" required>
+								<label for="choix_question">Choisissez une question secrète: </label>
+								<input type="text" id="question" name="questionSelect" placeholder="Ex: Mon lieu de naissance" minlength="8" value='<?php if (isset($questionSelect))
 {
     echo $questionSelect;
 } ?>' required>
-                  <label for="reponse">Votre réponse : <span style="color:red; font-weight:bold;">| A RETENIR |</span> </label>
-                  <input type="text" id="reponse"  name="reponse" placeholder="Ex: Paris" minlength="4" value ='<?php if (isset($reponse))
-{
-    echo $reponse;
-} ?>'required>
-                  <p> 
-                  <?php if (isset($erreur))
+								<label for="reponse">Votre réponse : <span style="color:red; font-weight:bold;">| A RETENIR |</span> </label>
+								<input type="text" id="reponse" name="reponse" placeholder="Ex: Paris" minlength="4" required>
+								<p>
+									<?php if (isset($erreur))
 {
     echo '<p><font color="red">' . $erreur . '</font></p>';
-} ?>
-               </p>
-               <p>
-                  <input class="bouton_enregistrer" type="submit" value="Enregistrer" name="valideForm">
-               </p>
-           </form>
-               
-
-
-
-            </div>
-         </div>
-      </main>
-      <?php require ('include/footer.php'); ?>
-   </body>
-</html>
-
+} ?> </p>
+								<p>
+									<input class="bouton_enregistrer" type="submit" value="Enregistrer" name="valideForm"> </p>
+							</form>
+						</div>
+					</div>
+				</main>
+				<?php require ('include/footer.php'); ?>
+		</body>
+		</html>

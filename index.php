@@ -3,10 +3,10 @@
          // 1 On verifie que le formulaire est valide
          if(isset($_POST['connectForm']))
          {
-              $usernameConnect = htmlspecialchars($_POST['usernameConnect']);
+               $usernameConnect = htmlspecialchars($_POST['usernameConnect']);
                $passwordConnect = password_hash($_POST['passwordConnect'], PASSWORD_DEFAULT);
             //2 On verifie que les champs ne sont pas vide
-            if(!empty($_POST['usernameConnect']) AND !empty($_POST['passwordConnect']))
+         if(!empty($_POST['usernameConnect']) AND !empty($_POST['passwordConnect']))
             {
                //3  On verifie que l'utilisateur et le mot de passe entré existent
          
@@ -18,17 +18,20 @@
                $user = $requser->fetch();
          
                //4 Si l'utilisateur existe alors on compare l'username entré avec le mot de passe enregistré dans la BDD
-               if($user AND password_verify($_POST['passwordConnect'], $user['password']))
+         if($user AND password_verify($_POST['passwordConnect'], $user['password']))
                {
                     session_start();
-                    $_SESSION['id'] = $user['Id'];
+                    $_SESSION['id'] = $user['id'];
                     $_SESSION['username'] = $user['username'];
                     $_SESSION['nom'] = $user['nom'];
                     $_SESSION['prenom'] = $user['prenom'];
+                    $_SESSION['mdp'] = $user['mdp'];
+                    $_SESSION['question'] = $user['question'];
+                    $_SESSION['reponse'] = $user['reponse'];
                     // A changer avec la page profil.php
                      header("Location:partenaires.php");
                      exit;
-               }
+                  }
                   
          //3
          else 

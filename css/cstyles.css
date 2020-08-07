@@ -457,6 +457,7 @@
     border-radius : 5px;
     padding-top:5px;
     padding-left:5px;
+    word-wrap : break-word; 
     
 }
   /* nombres commentaires */
@@ -482,4 +483,81 @@
     border: 1px solid #d2d2d2;
     background-color: #fcfcfc;
     padding: 5px 5px;
+}
+
+/* Espace membre */
+.informations_membres{
+    width:500px;
+    background: #f1f1f1;
+    border-radius:5px;
+    border:1px solid #e7e7e7;
+    margin-top:20px;
+    text-align: center;
+    padding:10px 10px;
+}
+
+.formulaire_modification{
+    justify-content: center;
+
+}
+
+.bouton_infos
+{
+    background-color: red;
+     border-radius: 10px;
+     color: #fff;
+     padding: 5px 10px 5px 10px;
+     box-shadow: 10px 10px 10px lightgrey;
+     margin-top: 60px;
+}
+
+label {
+    font-weight: bold;
+
+}
+
+.label {
+    margin-top:10px;
+    margin-bottom:10px;
+    font-weight: bold;
+    color:red;
+   
+
+}
+
+input {
+    height: 30px;
+    width: 350px;
+    border: 1px solid red;
+    text-align: center;
+    margin-top:20px;
+    margin-bottom:10px;
+}
+
+.bouton_modifs {
+    color: #fff;
+    background: red;
+    width: 350px;
+    border: 1px solid #fff;
+    margin-top: 20px;
+    border-radius: 7px;
+    font-size: 14px;
+}
+
+.bouton_modifs:hover {
+    color: #fff;
+    background: black;
+    width: 350px;
+    border: 1px solid #fff;
+    margin-top: 20px;
+    border-radius: 7px;
+    font-size: 14px;
+}
+
+/* Message d'erreurs parametres compte */
+.messageErreur
+{
+    color:red;
+    margin-top:20px;
+    font-weight: bold;
 }

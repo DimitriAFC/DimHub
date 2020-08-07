@@ -1,7 +1,5 @@
 <?php require('include/database.php');?>
-
-
-<?php
+	<?php
 
 //1 Je verifie le formulaire (si il existe)
 if(isset($_POST['valideForm']) AND isset($_POST['reponse']) AND isset($_GET['id']))
@@ -37,7 +35,7 @@ if(isset($_POST['valideForm']) AND isset($_POST['reponse']) AND isset($_GET['id'
   }
   else
   {
-   $msgErreur = "<span style='color:red; font-weight:bold;'>Merci de saisir un Username !</span> " ;
+   $msgErreur = "<span style='color:red; font-weight:bold;'>Merci de saisir une réponse !</span> " ;
   }
 }
 
@@ -46,28 +44,28 @@ else
 
 }
 ?>
+		<!doctype html>
+		<html lang="fr">
 
-<!doctype html>
-<html lang="fr">
-   <head>
-      <meta charset="utf-8">
-      <link type="text/css" rel="stylesheet" href="css/hcstyles.css" />
-      <link type="text/css" rel="stylesheet" href="css/hcstylesmobiles.css" />
-      <meta name=viewport content="width=device-width, initial-scale=1">
-      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-      <title>Projet 3</title>
-   </head>
-   <body>
-      <?php require('include/header.php')?>
-      <main id="connexion">
-         <div class="container">
-            <h2 class="bouton_page"><a href="index.php">Revenir à l'accueil</a></h2>
-         </div>
-         <div class="container">
-            <div class="form">
-               <form method="post">
-                  <label for="question">Votre question secrète est  :</label>
-               <?php 
+		<head>
+			<meta charset="utf-8">
+			<link type="text/css" rel="stylesheet" href="css/hcstyles.css" />
+			<link type="text/css" rel="stylesheet" href="css/hcstylesmobiles.css" />
+			<meta name=viewport content="width=device-width, initial-scale=1">
+			<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+			<title>Projet 3</title>
+		</head>
+
+		<body>
+			<?php require('include/header.php')?>
+				<main id="connexion">
+					<div class="container">
+						<h2 class="bouton_page"><a href="index.php">Revenir à l'accueil</a></h2> </div>
+					<div class="container">
+						<div class="form">
+							<form method="post">
+								<label for="question">Votre question secrète est :</label>
+								<?php 
                   // On lance la requête
                $answer = $bdd -> prepare('SELECT * FROM utilisateurs WHERE id = ?');
                // La requete va chercher la suestions indiqué dans la base de donnés voir si il existe
@@ -77,19 +75,17 @@ else
 
                echo "<span style='color:green; font-weight:bold; font-size:18px;'>" .$myAnswer['question']. " ?</span>";
                ?>
+									<label for="reponse">Réponse à la question :</label>
+									<input type="text" id="reponse" name="reponse">
+									<br/>
+									<p>
+										<?php if(isset($msgErreur)) { echo  $msgErreur; }  else { echo "";}?>
+									</p>
+									<input class="bouton_renvoyer" type="submit" value="Valider" name="valideForm"> </form>
+						</div>
+					</div>
+				</main>
+				<?php require('include/footer.php')?>
+		</body>
 
-
-                  <label for="reponse">Réponse à la question :</label>
-                  <input type="text" id="reponse"  name="reponse" ><br/>
-                   <p><?php if(isset($msgErreur)) { echo  $msgErreur; }  else { echo "";}?></p>
-                   <input class="bouton_renvoyer" type="submit" value="Valider" name="valideForm">
-               </form>
-              
-
-            </div>
-         </div>
-      </main>
-      <?php require('include/footer.php')?>
-   </body>
-</html>
-
+		</html>

@@ -7,8 +7,10 @@
       <img class="close_session" src="images/close.png" alt="close_img">
       <img class="settings" src="images/settings.png" alt="settings_img">
       <p class="bonjour"><?php echo '   Bonjour ' .$_SESSION['nom']. ' '.$_SESSION['prenom']. '' ?></p>
-      <a class="user_settings" href="#">Paramètres du compte</a>
+      <a class="user_settings" href="profil.php?id=<?= $_SESSION['id'] ?>">Paramètres du compte</a>
       <a class="end_session" href="deconnexion.php">Se déconnecter</a>
+
+      
     </div>
    </div>
 </header>

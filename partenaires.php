@@ -1,21 +1,5 @@
 <?php session_start(); ?>
-
-<?php
-
-if(isset($_SESSION['username']))
-{
-
-}
-else
-{
-   header("Location:index.php");
-   exit;
-}
-
-
-
-?>
-
+<?php require('include/redirection.php') ?>
 <!doctype html>
 <html lang="fr">
    <head>
