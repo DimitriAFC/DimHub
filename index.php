@@ -21,7 +21,7 @@
          if($user AND password_verify($_POST['passwordConnect'], $user['password']))
                {
                     session_start();
-                    $_SESSION['id'] = $user['id'];
+                    $_SESSION['id'] = $user['id_user'];
                     $_SESSION['username'] = $user['username'];
                     $_SESSION['nom'] = $user['nom'];
                     $_SESSION['prenom'] = $user['prenom'];

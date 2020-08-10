@@ -11,7 +11,7 @@ if(isset($_POST['valideForm']) AND isset($_POST['reponse']) AND isset($_GET['id'
   if(!empty($_POST['reponse']))
   {
                 // On lance la requête
-               $reqQ = $bdd -> prepare('SELECT * FROM utilisateurs WHERE id = ?');
+               $reqQ = $bdd -> prepare('SELECT * FROM utilisateurs WHERE id_user = ?');
                // La requete va chercher la reponse indiqué dans la base de donnés voir si il existe
                $reqQ -> execute(array($_GET['id']));
                //On lance la recherche
@@ -67,7 +67,7 @@ else
 								<label for="question">Votre question secrète est :</label>
 								<?php 
                   // On lance la requête
-               $answer = $bdd -> prepare('SELECT * FROM utilisateurs WHERE id = ?');
+               $answer = $bdd -> prepare('SELECT * FROM utilisateurs WHERE id_user = ?');
                // La requete va chercher la suestions indiqué dans la base de donnés voir si il existe
                $answer -> execute(array($_GET['id']));
                //On lance la recherche

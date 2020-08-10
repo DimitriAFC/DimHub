@@ -18,7 +18,7 @@ if(isset($_POST['valideMdp']) && isset($_POST['motdepass']) && isset($_POST['mot
             
        
 
-             $modify = $bdd -> prepare("UPDATE utilisateurs SET password ='$mdp' WHERE id = ?");
+             $modify = $bdd -> prepare("UPDATE utilisateurs SET password ='$mdp' WHERE id_user = ?");
              $modify -> execute(array($_GET['id']));
              $modify -> closeCursor();
 

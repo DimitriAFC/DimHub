@@ -18,7 +18,7 @@
                   if($userExiste)
                   {
                   
-                           header("location:answer.php?id=".$userExiste['id']);
+                           header("location:answer.php?id=".$userExiste['id_user']);
                            exit;
                   }
          // 3 Sinon message d'erreur

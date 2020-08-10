@@ -4,7 +4,7 @@
 			<?php
 
 
-         $checkart = $bdd -> prepare("SELECT * FROM acteurs WHERE id=?");
+         $checkart = $bdd -> prepare("SELECT * FROM acteurs WHERE id_acteur=?");
          $checkart -> execute(array($_GET['id']));
 
         //2 Si l'article existe (==1)
@@ -16,7 +16,7 @@
 if(isset($_GET['id']))
 {
    // Récupération de la table acteurs
-   $reqAct = $bdd ->prepare('SELECT * FROM acteurs WHERE id=?');
+   $reqAct = $bdd ->prepare('SELECT * FROM acteurs WHERE id_acteur=?');
 
    $reqAct -> execute(array($_GET['id']));
 
@@ -26,7 +26,7 @@ if(isset($_GET['id']))
    $image =  $acteurs["image"];
    $name = $acteurs['nom'];
    $desc = $acteurs['description'];
-   $id = $acteurs['id'];
+   $id = $acteurs['id_acteur'];
 
 }
 //2
@@ -44,11 +44,11 @@ else
 ?>
 				<?php
 
-      $likes = $bdd->prepare("SELECT id FROM likes WHERE id_acteurs=?");
+      $likes = $bdd->prepare("SELECT * FROM votes WHERE vote='1' AND id_acteur = ?");
       $likes -> execute(array($id));
       $likes = $likes-> rowCount();
 
-      $dislikes = $bdd->prepare("SELECT id FROM dislikes WHERE id_acteurs=?");
+      $dislikes = $bdd->prepare("SELECT * FROM votes WHERE vote='2' AND id_acteur = ?");
       $dislikes -> execute(array($id));
       $dislikes = $dislikes -> rowCount();
 
@@ -116,28 +116,35 @@ else
 												<?php echo $name; ?>
 											</p>
 										</div>
+									
 										<?php
 
+										// Requête jointure
+										$reqCom = $bdd ->prepare("SELECT * FROM commentaires INNER JOIN utilisateurs ON commentaires.id_user = utilisateurs.id_user WHERE commentaires.id_acteurs");
+										$reqCom ->execute([$id]);
+
+										?>
+
+										<?php while ($comm = $reqCom -> fetch()){
+											if($comm['id_acteurs'] === $id) { ?>
 
 
-               $reqCom = $bdd ->prepare("SELECT * FROM commentaires WHERE id_acteurs=? ORDER BY date DESC");
-               $reqCom -> execute(array($_GET['id']));
 
-               $com = $reqCom ->fetchAll();
-
-               foreach($com as $index => $user)
-               
-
-               {?>
 											<div class="message_coms"> <b><span style="color:red;"> Postée le :</b></span>
-												<?php echo $user['date']; ?>
-													<br/> <b><span style="color:red;"> Pseudo :</b></span>
-													<?php echo $user['username'];?>
+												<?= $comm['date'] ?>
+													<br/> <b><span style="color:red;"> Nom :</b></span>
+													<?= $comm['nom'] . ' ' . $comm['prenom'] ?>
 														<br/> <b><span style="color:red;"> Message :</b></span>
-														<?php echo $user['commentaire'];?>
+														<?= $comm['commentaire'] ?>
 															<br/>
-															<br/> </div>
-											<?php }?>
+															<br/> 
+															</div>
+														
+											<?php }
+										}
+										?>
+									
+										
 									</div>
 								</section>
 							</div>

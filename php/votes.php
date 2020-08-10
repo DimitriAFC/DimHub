@@ -44,80 +44,78 @@ else
 
 <?php
 
-// On verifie que les variables existents et si elles ne sont pas vides
+//1 On verifie que les variables existents et si elles ne sont pas vides
 if(isset($_GET['type'], $_GET['id']) AND !empty($_GET['type']) AND !empty($_GET['id']))
 {
         $idact = (int) $_GET['id'];
         $type = (int) $_GET['type'];
         $user = $_SESSION['username'];
+        $id_u = $_SESSION['id'];
         // On check voir si l'acteur existe dans la BDD
-        $checkart = $bdd -> prepare("SELECT * FROM acteurs WHERE id=?");
+        $checkart = $bdd -> prepare("SELECT * FROM acteurs WHERE id_acteur =?");
         $checkart -> execute(array($idact));
 
         //2 Si l'acteur existe (==1)
         if($checkart -> rowCount() == 1)
         {
-            // On verifie avec l'id de l'acteur et l'user si un vote n'existe pas encore
-          $verif = $bdd ->prepare("SELECT * FROM likes WHERE id_acteurs= ? AND username = ?");
-          $verif ->execute(array($idact, $user));
-          $veriflike = $verif ->fetch();
-
-          $verifd = $bdd ->prepare("SELECT * FROM dislikes WHERE id_acteurs= ? AND username = ?");
-          $verifd ->execute(array($idact, $user));
-          $verifdislike = $verifd ->fetch();
-
-            // Si le vote == 0 donc n'existe pas on insert le vote dans la BDD 
-          if($veriflike  == 0 AND $verifdislike == 0)
-          {
-                  // Si le type == 1 alors
+            //3 Si le type == 1 pour like (valeur envoyer en GET)
             if($type == 1)
             {
-                // On insért les votes
-                $insertl = $bdd -> prepare("INSERT INTO likes (username, id_acteurs) VALUES (?,?)");
-                $insertl -> execute(array(
-                    $user,
-                    $idact
-                ));
-                header("Location:http://localhost/projet3/acteurs.php?succes=Votre vote à été pris en compte&id=$idact");
-                exit;
-        
+                $checkVotes = $bdd->prepare("SELECT * FROM votes WHERE id_acteur = ? AND id_user = ? AND vote = ?");
+                $checkVotes -> execute(array($idact, $id_u, $type));
+
+                // 4 On verifie que le vote n'existe pas encore
+                if($checkVotes-> rowCount() == 1)
+                {
+                    header("Location:http://localhost/projet3/acteurs.php?succes=Vous avez déjà voter pour ce partenaire&id=$idact");
+                    exit;
+                }
+                else
+                {
+
+                    $delDis = $bdd->prepare("DELETE FROM votes WHERE id_acteur=? AND id_user =?");
+                    $delDis-> execute(array($idact, $id_u));
+
+                    $insertl = $bdd -> prepare("INSERT INTO votes (id_user, id_acteur, vote) VALUES (?,?,?)");
+                    $insertl -> execute(array(
+                    $id_u,
+                    $idact,
+                    $type));
+                    header("Location:http://localhost/projet3/acteurs.php?succes=Votre vote à été pris en compte&id=$idact");
+                    exit;
+                }
             }
-            //Ou si le type == 2 alors (Le type 1 pour like et 2 pour dislike)
+           
+            //3 Si le type == 2 pour dislike (valeur envoyer en GET)
             elseif($type == 2)
             {
-                $insertl = $bdd -> prepare("INSERT INTO dislikes (username, id_acteurs) VALUES (?,?)");
-                $insertl -> execute(array(
-                    $user,
-                    $idact
-                ));
-                header("Location:http://localhost/projet3/acteurs.php?succes=Votre vote à été pris en compte&id=$idact");
-                exit;
+                $checkVotes = $bdd->prepare("SELECT * FROM votes WHERE id_acteur = ? AND id_user = ? AND vote =?");
+                $checkVotes -> execute(array($idact, $id_u, $type));
 
-            }
-            // Sinon la valeur n'est pas bonne !
-            else
-            {
+                // 4 On verifie que le vote n'existe pas encore
+                if($checkVotes -> rowCount() == 1)
+                {
+                    header("Location:http://localhost/projet3/acteurs.php?succes=Vous avez déjà voter pour ce partenaire&id=$idact");
+                    exit;
+                }
+                else
+                {
 
+                    $delDis = $bdd->prepare("DELETE FROM votes WHERE id_acteur=? AND id_user =?");
+                    $delDis-> execute(array($idact, $id_u));
+
+                    $insertl = $bdd -> prepare("INSERT INTO votes (id_user, id_acteur, vote) VALUES (?,?,?)");
+                    $insertl -> execute(array(
+                    $id_u,
+                    $idact,
+                    $type));
+                    header("Location:http://localhost/projet3/acteurs.php?succes=Votre vote à été pris en compte&id=$idact");
+                    exit;
+                }
             }
-          }
-          else
-          { 
-                header("Location:http://localhost/projet3/acteurs.php?erreur=Tu as déjà voté pour ce partenaire&id=$idact");
-                  exit;
-                
-          }
-        }
-        //2
-        else
-        {
-            echo 'non';
         }
 }
-//1
-else
-{
-    echo 'non';
-}
+
 
 
 

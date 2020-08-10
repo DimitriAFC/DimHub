@@ -21,7 +21,7 @@ if (isset($_GET['id']) and !empty($_GET['id']))
         if (!empty($nom) and !empty($prenom))
         {
             // Modification du pseudo si il n'est pas déjà enregistrer
-            $insertUser = $bdd->prepare("UPDATE utilisateurs SET nom = '$nom', prenom = '$prenom'  WHERE id ='$userId'");
+            $insertUser = $bdd->prepare("UPDATE utilisateurs SET nom = '$nom', prenom = '$prenom'  WHERE id_user ='$userId'");
             $insertUser->execute(array(
                 $nom,
                 $prenom,
@@ -64,7 +64,7 @@ if (isset($_POST['form2']))
     {
         $reponse = password_hash($_POST['reponse'], PASSWORD_DEFAULT);
 
-        $answer = $bdd->prepare("UPDATE utilisateurs SET question ='$question', reponse = '$reponse' WHERE id ='$userId'");
+        $answer = $bdd->prepare("UPDATE utilisateurs SET question ='$question', reponse = '$reponse' WHERE id_user ='$userId'");
         $answer->execute(array(
             $question,
             $reponse
@@ -101,7 +101,7 @@ if (isset($_POST['form3']))
             $mdp = password_hash($_POST['mdp'], PASSWORD_DEFAULT);
             $mdp2 = password_hash($_POST['mdp2'], PASSWORD_DEFAULT);
 
-            $pass = $bdd->prepare("UPDATE utilisateurs SET password ='$mdp' WHERE id ='$userId'");
+            $pass = $bdd->prepare("UPDATE utilisateurs SET password ='$mdp' WHERE id_user ='$userId'");
             $pass->execute(array(
                 $mdp
             ));
@@ -149,7 +149,7 @@ if (isset($_POST['form4']))
         if ($newUser == 0)
         {
             // Modification du pseudo si il n'est pas déjà enregistrer
-            $insertUser = $bdd->prepare("UPDATE utilisateurs SET username ='$username' WHERE id ='$userId'");
+            $insertUser = $bdd->prepare("UPDATE utilisateurs SET username ='$username' WHERE id_user ='$userId'");
             $insertUser->execute(array(
                 $username
             ));

@@ -11,13 +11,13 @@ if(isset($_GET['id']) AND !empty($_GET['id']))
 
       $userS = $_SESSION['id'];
 
-      $select = $bdd ->prepare("SELECT * FROM utilisateurs WHERE id = ? ");
+      $select = $bdd ->prepare("SELECT * FROM utilisateurs WHERE id_user = ? ");
       $select -> execute(array($userS));
       $reqU = $select -> fetch();
 
 
       $message = htmlspecialchars($_POST['message']);
-      $id =  $reqU['id'];
+      $id =  $reqU['id_user'];
       $user =  $reqU['username'];
       $idact = $_GET['id'];
 
@@ -27,16 +27,18 @@ if(isset($_GET['id']) AND !empty($_GET['id']))
         {
               
 
-                  $count = $bdd->prepare("SELECT * FROM commentaires WHERE username =? AND id_acteurs = ?");
-                  $count -> execute(array($user, $idact));
+                  $count = $bdd->prepare("SELECT * FROM commentaires WHERE id_user =? AND id_acteurs = ?");
+                  $count -> execute(array($id, $idact));
                   //4
                   if($count -> rowCount() == 0)
                   {
-                     $commentaires = $bdd -> prepare('INSERT INTO commentaires (username, commentaire, id_acteurs) VALUES(?, ?, ?) ');
+
+
+                     $commentaires = $bdd -> prepare('INSERT INTO commentaires (commentaire, id_acteurs, id_user) VALUES(?, ?, ?) ');
                      $commentaires->execute(array(
-                        $user,
                         $message,
-                        $idact
+                        $idact,
+                        $id
                         ));
                         $commentaires->CloseCursor();  
                         header("Location:acteurs.php?id=".$_GET['id']. "&message=Commentaire ajouté avec succées !");
