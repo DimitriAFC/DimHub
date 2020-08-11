@@ -1,4 +1,5 @@
 <?php require('include/database.php');?>
+<?php require ('include/horsconnexion.php') ?>
 	<?php
 
 // 1 On verifie si les champs existent !
@@ -37,11 +38,6 @@ else
 {
   $msgErreur = "<span style='color:red; font-weight:bold;'>Certains champs sont vide !</span> " ;
 }
-}
-//1
-else
-{
-      echo  '';
 }
 
 

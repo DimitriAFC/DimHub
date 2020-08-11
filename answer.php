@@ -1,4 +1,5 @@
 <?php require('include/database.php');?>
+<?php require ('include/horsconnexion.php') ?>
 	<?php
 
 //1 Je verifie le formulaire (si il existe)
@@ -37,11 +38,6 @@ if(isset($_POST['valideForm']) AND isset($_POST['reponse']) AND isset($_GET['id'
   {
    $msgErreur = "<span style='color:red; font-weight:bold;'>Merci de saisir une réponse !</span> " ;
   }
-}
-
-else
-{
-
 }
 ?>
 		<!doctype html>

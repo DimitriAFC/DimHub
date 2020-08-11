@@ -32,13 +32,6 @@
                      $msgErreur ='<p style="color:red; font-weight:bold;">Veuillez saisir un Username</p>';
             }
          }
-         
-         //1
-         else {}
-         
-         
-         
-         
          ?>
 		<!doctype html>
 		<html lang="fr">

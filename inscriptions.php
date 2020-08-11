@@ -79,13 +79,6 @@ if (isset($_POST['valideForm']) and $_POST['valideForm'])
         $erreur = "<span style='color:red; font-weight:bold;'>Merci de complêter le formulaire !</span> " ;
     }
 }
-
-//1
-else
-{
-    echo '';
-}
-
 ?>
 		<!doctype html>
 		<html lang="fr">

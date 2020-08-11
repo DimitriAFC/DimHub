@@ -65,11 +65,6 @@ if(isset($_GET['id']) AND !empty($_GET['id']))
       $erreur = "Merci de taper un commentaire";
    }
 }
-//1
-else
-{
-   
-}
 ?>
 				<!doctype html>
 				<html lang="fr">
@@ -87,7 +82,7 @@ else
 						<div class="container">
 							<form class="formcoms" method="post">
 								<?php if(isset($erreur)) { echo "<span style='font-weight:bold;'> "  .$erreur. " </span>"; } ?></br>
-									<label class="titreCommentaires" for="message">Ajoutez un commentaire </label>
+						
 									<br/>
 									<textarea class="inputcoms" type="text" placeholder="Votre commentaire (Max 255 caractères)" maxlength="285" name="message"></textarea>
 									<br/>

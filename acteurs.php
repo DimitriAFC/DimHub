@@ -29,11 +29,6 @@ if(isset($_GET['id']))
    $id = $acteurs['id_acteur'];
 
 }
-//2
-else
-{
-
-}
 }
 //1
 else
@@ -120,7 +115,7 @@ else
 										<?php
 
 										// Requête jointure
-										$reqCom = $bdd ->prepare("SELECT * FROM commentaires INNER JOIN utilisateurs ON commentaires.id_user = utilisateurs.id_user WHERE commentaires.id_acteurs");
+										$reqCom = $bdd ->prepare("SELECT * FROM commentaires INNER JOIN utilisateurs ON commentaires.id_user = utilisateurs.id_user WHERE commentaires.id_acteurs ORDER BY commentaires.date DESC");
 										$reqCom ->execute([$id]);
 
 										?>

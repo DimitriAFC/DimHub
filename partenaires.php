@@ -11,7 +11,6 @@
    </head>
    <body>
       <?php require('include/header.php')?>
-      <div class="container">
          <section id="presentation_gbaf">
             <h1>Présentation du Groupement Banque et Assurance Française</h1>
             <p>Le Groupement Banque Assurance Français​ (GBAF) est une fédération  représentant les 6 grands groupes français  </p>
@@ -23,13 +22,12 @@
                bancaire à l’échelle nationale. C’est aussi un interlocuteur privilégié des  pouvoirs publics.
             </p>
          </section>
-      </div>
-      <div class="container">
+
          <section id="presentation_partenaires">
             <h2>Présentation des acteurs</h2>
             <p>Les acteurs et partenaires de la GBAF</p>
          </section>
-      </div>
+         
       <div class="container">
          <section id="acteurs">
             <div class="presentation_acteurs">

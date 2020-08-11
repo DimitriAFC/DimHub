@@ -44,14 +44,7 @@
             {
                $msgErreur = "<span style='color:red; font-weight:bold;'>Merci de complêter les champs !</span> " ;
             }
-         }
-         // 1
-         else 
-         {
-            echo '';
-         }
-         
-         
+         }    
          ?>
 <!doctype html>
 <html lang="fr">
