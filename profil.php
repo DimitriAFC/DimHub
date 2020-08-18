@@ -79,10 +79,6 @@ if (isset($_GET['id']) and !empty($_GET['id']))
                         $msgErreur = "Mot de passe non identique.";
                     }
                 }
-                else
-                {
-
-                }
             }
             //6 Si l'utilisateur rempli la question et la réponse, on update
             elseif(!empty($question) and !empty($reponse))
@@ -148,6 +144,7 @@ if (isset($_GET['id']) and !empty($_GET['id']))
       <meta charset="utf-8">
       <link type="text/css" rel="stylesheet" href="css/cstyles.css" />
       <link type="text/css" rel="stylesheet" href="css/cstylesmobiles.css" />
+      <link type="text/css" rel="stylesheet" href="css/ctablettestyle.css" />
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
       <title>Projet 3</title>
@@ -165,19 +162,19 @@ if (isset($_GET['id']) and !empty($_GET['id']))
             <form class="formulaire_modification" method="post" action="#">
                <div class="informations_membres">
                   <label for="nom">Nom  </label><br/>
-                  <input type="text" id="nom" maxlength="20" value="<?= $_SESSION['nom'] ?>" name="nom"  ></br>
+                  <input type="text" id="nom" maxlength="20" value="<?= $_SESSION['nom'] ?>" name="nom"  ><br>
                   <label for="prenom">Prénom </label><br/>
-                  <input type="text" id="prenom" maxlength="20" value="<?= $_SESSION['prenom'] ?>" name="prenom"  ></br>
+                  <input type="text" id="prenom" maxlength="20" value="<?= $_SESSION['prenom'] ?>" name="prenom"  ><br>
                   <label for="username">Username  </label><br/>
-                  <input type="text" id="username" maxlength="20"  minlength="4" value="<?= $_SESSION['username'] ?>" name="username"  ></br>
+                  <input type="text" id="username" maxlength="20"  minlength="4" value="<?= $_SESSION['username'] ?>" name="username"  ><br>
                   <label for="question">Question secrête  </label><br/>
-                  <input type="text" id="question" value="<?= $_SESSION['question'] ?>" name="question"  ></br>
+                  <input type="text" id="question" value="<?= $_SESSION['question'] ?>" name="question"  ><br>
                   <label for="reponse">Votre réponse </label><br/>
-                  <input type="text" id="reponse"  placeholder="Exemple : Paris" name="reponse"  ></br>
+                  <input type="text" id="reponse"  placeholder="Exemple : Paris" name="reponse"  ><br>
                   <label for="mdp">Changer le mot de passe  </label><br/>
-                  <input type="password" id="mdp" placeholder="Merci de sécuriser le mot de passe" name="mdp"  ></br>
+                  <input type="password" id="mdp" placeholder="Merci de sécuriser le mot de passe" name="mdp"  ><br>
                   <label for="mdp2">Comfirmer le mot de passe </label><br/>
-                  <input type="password" id="mdp2" placeholder="Merci de sécuriser le mot de passe"  name="mdp2"  ></br>
+                  <input type="password" id="mdp2" placeholder="Merci de sécuriser le mot de passe"  name="mdp2"  ><br>
                   <input class="bouton_modifs" type="submit" name="formmbr" value="Modifier mes informations" >
                </div>
             </form>

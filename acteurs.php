@@ -55,7 +55,9 @@ else
 					<head>
 						<meta charset="utf-8">
 						<link type="text/css" rel="stylesheet" href="css/cstyles.css" />
-						<meta name=viewport content="width=device-width, initial-scale=1">
+						<meta name="viewport" content="width=device-width, initial-scale=1">
+						<link type="text/css" rel="stylesheet" href="css/cstylesmobiles.css" />
+						<link type="text/css" rel="stylesheet" href="css/ctablettestyle.css" />
 						<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
 						<title>Projet 3</title>
 					</head>
@@ -75,36 +77,60 @@ else
 										<?php echo $desc; ?>
 									</p> <a href="partenaires.php"> Retour </a> </section>
 							</div>
-							<div class="container">
-								<section class="commentaires">
-									<div class="espacelike">
-										<div class="like">
-											<p>
+						
+
+
+
+<?php
+$commentaires = $bdd -> prepare("SELECT COUNT(*) AS nb_com  FROM commentaires WHERE id_acteurs=?");
+$commentaires -> execute(array($_GET ['id']));
+$donnees = $commentaires -> fetch();
+?>
+
+<!--C1-->							<div class="container">
+<!--S1-->						<section class="commentaires">
+
+
+<!--1-->								<div class="espacelike">
+<!--3-->							<div class="like">
+<p>
 												<?= $likes ?>
 											</p>
-										</div>
-										<a href="php/votes.php?type=1&id=<?= $_GET['id'] ?>"><img class="img_like" src="images/like.png"></a>
-										<div class="dislike">
+<!--3-->										</div>
+										<a class="lien_like" href="php/votes.php?type=1&id=<?= $_GET['id'] ?>"><img class="img_like" src="images/like.png" alt="image_like"></a>
+<!--2-->										<div class="dislike">
 											<p>
 												<?= $dislikes ?>
 											</p>
-										</div>
-										<a href="php/votes.php?type=2&id=<?= $_GET['id'] ?>"><img class="img_dislike" src="images/dislike.png"></a>
-										<div class="addComs"><a class="ajout_coms" href="formulaire.php?id=<?php echo $id; ?>" target="blank">Nouveau commentaire</a></div>
-										<?php
+											<a class="lien_like" href="php/votes.php?type=2&id=<?= $_GET['id'] ?>"><img class="img_dislike" src="images/dislike.png" alt="image_dislike"></a>
+<!--2-->											</div>
+<!--1-->							</div>
 
-               $commentaires = $bdd -> prepare("SELECT COUNT(*) AS nb_com  FROM commentaires WHERE id_acteurs=?");
-               $commentaires -> execute(array($_GET ['id']));
-               $donnees = $commentaires -> fetch();
-               
+<?php
+$commentaires = $bdd -> prepare("SELECT COUNT(*) AS nb_com  FROM commentaires WHERE id_acteurs=?");
+$commentaires -> execute(array($_GET ['id']));
+$donnees = $commentaires -> fetch();
+?>
 
 
-               ?>
-											<div class="nbrComs">
+
+
+<!--4-->	<div class="addComs">
+<a class="ajout_coms" href="formulaire.php?id=<?php echo $id; ?>" target="blank">Nouveau commentaire</a>
+<!--4-->  </div>
+
+
+<!--5--> <div class="nbrComs">
 												<p>
 													<?php echo $donnees['nb_com']; ?> <span style="color:black;">Commentaires</span></p>
-											</div>
-									</div>
+<!--5--> 	</div>
+
+
+
+
+
+							
+
 									<div class="coms">
 										<div class="commentaires_coms">
 											<p>Aperçu des avis sur
@@ -125,14 +151,14 @@ else
 
 
 
-											<div class="message_coms"> <b><span style="color:red;"> Postée le :</b></span>
+											<div class="message_coms"> <span style="color:red;"> Postée le :</span>
 												<?= $comm['date'] ?>
-													<br/> <b><span style="color:red;"> Nom :</b></span>
+													<br> <span style="color:red;"> Nom :</span>
 													<?= $comm['nom'] . ' ' . $comm['prenom'] ?>
-														<br/> <b><span style="color:red;"> Message :</b></span>
+														<br> <span style="color:red;"> Message :</span>
 														<?= $comm['commentaire'] ?>
-															<br/>
-															<br/> 
+															<br>
+															<br> 
 															</div>
 														
 											<?php }
@@ -141,9 +167,10 @@ else
 									
 										
 									</div>
-								</section>
-							</div>
+<!--S1-->								</section>
+<!--C1-->								</div>
 							<?php require('include/footer.php')?>
-					</body>
 
+
+					</body>
 					</html>

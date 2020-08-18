@@ -47,20 +47,21 @@ if(isset($_POST['valideForm']) AND isset($_POST['reponse']) AND isset($_GET['id'
 			<meta charset="utf-8">
 			<link type="text/css" rel="stylesheet" href="css/hcstyles.css" />
 			<link type="text/css" rel="stylesheet" href="css/hcstylesmobiles.css" />
-			<meta name=viewport content="width=device-width, initial-scale=1">
+      <link type="text/css" rel="stylesheet" href="css/hctablettestyle.css" />
+			<meta name="viewport" content="width=device-width, initial-scale=1">
 			<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
 			<title>Projet 3</title>
 		</head>
 
 		<body>
-			<?php require('include/header.php')?>
+    <?php require('include/headerindex.php')?>
 				<main id="connexion">
 					<div class="container">
 						<h2 class="bouton_page"><a href="index.php">Revenir à l'accueil</a></h2> </div>
 					<div class="container">
 						<div class="form">
 							<form method="post">
-								<label for="question">Votre question secrète est :</label>
+								<p class="Qsecrete">Votre question secrète est :</p>
 								<?php 
                   // On lance la requête
                $answer = $bdd -> prepare('SELECT * FROM utilisateurs WHERE id_user = ?');

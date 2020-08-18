@@ -5,7 +5,9 @@
    <head>
       <meta charset="utf-8">
       <link type="text/css" rel="stylesheet" href="css/cstyles.css" />
-      <meta name=viewport content="width=device-width, initial-scale=1">
+      <link type="text/css" rel="stylesheet" href="css/cstylesmobiles.css" />
+      <link type="text/css" rel="stylesheet" href="css/ctablettestyle.css" />
+      <meta name="viewport" content="width=device-width, initial-scale=1">
       <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
       <title>Projet 3</title>
    </head>

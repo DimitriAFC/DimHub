@@ -1,0 +1,269 @@
+@media all and (min-width: 768px) and (max-width: 1024px)
+{
+
+    /* Logo GBAF */
+ .logo {
+    height: 100px;
+    width: 100px;
+    position:absolute;
+    left:-100px;
+    margin-top:20px;
+}
+
+.logo:hover{
+   opacity: 0.65;
+}
+
+    /* Largeur des container */
+ .container {
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+}
+
+   /* Image dé présentation */
+ .img_presentation {
+    Height:300px;
+    width:700px;
+    border:1px solid #d2d2d2;
+}
+
+/* Section presentation GBAF */
+#presentation_gbaf {
+    text-align:center;
+    margin-top: 50px;
+    margin-bottom:80px;
+    width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+}
+
+/* Section presentation acteurs */
+.presentation_acteurs {
+    height:170px;
+    width:720px;
+    background-color:#e7e7e7;
+    box-shadow: 1px 1px 6px 1px #e7e7e7;
+    margin-bottom:100px;
+    border: 1px solid #d2d2d2;
+}
+
+/* Textes des acteurs */
+.presentation_acteurs>p {
+    height:10px;
+    width:400px;
+    font-size:13px;
+    position:relative;
+    top:1px;
+    left:1px;
+}
+
+/* Bouton lire la suite */
+.bouton_lire {
+    color:#fff;
+    background-color:red;
+    box-sizing: border-box;
+    padding:7px 7px 7px 7px;
+    border-radius:10px;
+    position:relative;
+    top:60px;
+    left:600px;
+}
+
+.bouton_lire:hover {
+    color:#fff;
+    background-color:black;
+    box-sizing: border-box;
+    padding:7px 7px 7px 7px;
+    border-radius:10px;
+    position:relative;
+    top:60px;
+    left:600px;
+}
+
+/* Texte bonjour nom & prénom */
+.bonjour {
+    font-weight: bold;
+    font-size:14px;
+    position:relative;
+    top:65px;
+    left:0px;
+
+}
+
+.user
+{
+    display:none;
+}
+
+.espace_mbr
+{
+    position:relative;
+    left:200px;
+    margin-top:20px;
+}
+
+/* Section presentation acteurs page */
+.act_presentation {
+    height: 450px;
+    width: 680px;
+    background-color:#f1f1f1;
+    border-radius: 5px;
+    margin-top: 50px;
+    text-align:center;
+    border: 1px solid #d2d2d2;
+
+}
+
+/* Texte H2 Présentation */
+.act_presentation>p {
+    height:300px;
+    width:600px;
+    margin-top:30px;
+    margin-left:50px;
+    font-size:14px;
+}
+
+ /* Espace commentaire */
+ .commentaires{
+    text-align: center; 
+    width:650px;
+
+}
+
+ /* espace commentaires */
+ .coms {
+    width: 500px;
+    background-color: #fff;
+    margin-bottom:30px;
+    border: 1px solid #d2d2d2;
+    position:relative;
+    left:80px;
+    top:-100px;
+}
+
+  /* nombres commentaires */
+  .nbrComs
+  {
+      color:red;
+      font-weight: bold;
+      width:200px;
+      position:relative;
+      left:15px;
+      top:-115px;
+      background-color: #fff;
+      height:50px;
+      border-radius:5px;
+      border: 1px solid #d2d2d2;
+      text-align: center;
+  }
+
+    /* Espace like */
+    .espacelike{
+        background-color:#fff;
+        height:60px;;
+        width:200px;
+        margin-bottom:30px;
+        border: 1px solid #d2d2d2;
+        border-radius: 5px;
+        position:relative;
+        top:5px;
+        left:430px;
+    }
+}
+
+@media all and (min-width: 1024px) and (max-width: 1224px)
+{
+        /* Logo GBAF */
+ .logo {
+    height: 100px;
+    width: 100px;
+    position:absolute;
+    left:100px;
+    margin-top:20px;
+}   
+
+.espace_mbr
+{
+    position:relative;
+    left:300px;
+    margin-top:20px;
+}
+
+/* Section presentation acteurs */
+.presentation_acteurs {
+    height:150px;
+    width:790px;
+    background-color:#e7e7e7;
+    box-shadow: 1px 1px 6px 1px #e7e7e7;
+    margin-bottom:100px;
+    border: 1px solid #d2d2d2;
+}
+
+/* Bouton lire la suite */
+.bouton_lire {
+    color:#fff;
+    background-color:red;
+    box-sizing: border-box;
+    padding:7px 7px 7px 7px;
+    border-radius:10px;
+    position:relative;
+    top:40px;
+    left:680px;
+}
+
+.bouton_lire:hover {
+    color:#fff;
+    background-color:black;
+    box-sizing: border-box;
+    padding:7px 7px 7px 7px;
+    border-radius:10px;
+    position:relative;
+    top:40px;
+    left:680px;
+}
+
+    /* Espace like */
+    .espacelike{
+        background-color:#fff;
+        height:60px;;
+        width:200px;
+        margin-bottom:30px;
+        border: 1px solid #d2d2d2;
+        border-radius: 5px;
+        position:relative;
+        top:15px;
+        left:430px;
+    }
+
+      /* nombres commentaires */
+  .nbrComs
+  {
+      color:red;
+      font-weight: bold;
+      width:200px;
+      position:relative;
+      left:15px;
+      top:-95px;
+      background-color: #fff;
+      height:50px;
+      border-radius:5px;
+      border: 1px solid #d2d2d2;
+      text-align: center;
+  }
+
+
+ /* espace commentaires */
+ .coms {
+    width: 500px;
+    background-color: #fff;
+    margin-bottom:30px;
+    border: 1px solid #d2d2d2;
+    position:relative;
+    left:80px;
+    top:-60px;
+}
+}

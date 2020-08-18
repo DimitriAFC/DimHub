@@ -1,0 +1,716 @@
+@media all and (max-width: 480px)
+{
+    /* Toutes séléction */
+    *
+{
+     margin:0px;
+     padding:0px;
+     box-sizing: border-box;
+}
+
+/* taille des containers */
+.container
+{
+    width:100%;
+     display: flex;
+     justify-content: center;
+}
+
+/* Header */
+#monheader {
+    background-color: white;
+    height: 150px;
+    width: 100%;
+    box-shadow: 1px 1px 10px #e5e5e5;
+}
+
+/* Logo GBAF */
+.logo {
+    height: 90px;
+    width: 90px;
+    z-index: 1;
+    margin-left: 100px;
+
+}
+
+.logo:hover{
+    opacity: 0.65;
+}
+
+
+/* Pied de page */
+#monfooter {
+    background-color: red;
+    height: 70px;
+    width: 100%;
+    position: relative;
+    bottom:0px;
+}
+
+/* image présentation */
+.img_presentation {
+    Height:150px;
+    width:100%;
+    border:1px solid #d2d2d2;
+    margin:3px 3px;
+    padding:3px 3px;
+   
+
+}
+
+/* présentation partenaires*/
+#presentation_gbaf {
+width:100%;
+padding:8px 8px;
+}
+
+/* présentation partenaires paragraphe*/
+#presentation_gbaf>p {
+    margin:10px;
+    font-size:14px;
+}
+
+/*Titre présentation partenaires*/
+#presentation_gbaf>h1 {
+    color:red;
+    font-size:16px;
+
+}
+
+
+/* Section presentation acteurs */
+.presentation_acteurs {
+    height:300px;
+    width:300px;
+    background-color:#e7e7e7;
+    box-shadow: 1px 1px 6px 1px #e7e7e7;
+    border: 1px solid #d2d2d2;
+
+}
+
+/* Section presentation titre acteurs */
+.presentation_acteurs>h3 {
+    Color:red;
+    font-size:18px;
+    position:relative;
+    top:120px;
+    right:280px;
+    white-space:nowrap;
+}
+
+/* Section presentation texte acteurs */
+.presentation_acteurs>p {
+    margin-top:20px;
+    font-size:12px;
+    position:relative;
+    top:110px;
+    right:280px;
+    width:260px;
+    word-wrap : break-word; 
+}
+
+/* Bouton lire la suite acteurs */
+.bouton_lire {
+    color:#fff;
+    font-size:14px;
+    background-color:red;
+    box-sizing: border-box;
+    padding:3px 3px;
+    border-radius:5px;
+    position:relative;
+    left:200px;
+    top:190px;
+
+
+}
+
+.bouton_lire:hover {
+    color:#fff;
+    background-color:black;
+    box-sizing: border-box;
+    padding:3px 3px;
+    border-radius:5px;
+    position:relative;
+    left:200px;
+    top:190px;
+}
+
+/* Titre présentation des partenaires */
+#presentation_partenaires>h2 {
+    color:red;
+    margin:10px;
+
+}
+
+/* Texte présentation des partenaires */
+#presentation_partenaires>p {
+    color:red;
+    margin:10px;
+  
+}
+
+/* Texte bonjour utilisateur */
+.bonjour {
+    font-weight: bold;
+    font-size:12px;
+    position:relative;
+    top:120px;
+    left:20px;
+}
+
+/* Logo paramètres mobile */
+.settings {
+    height:20px;
+    width:20px;
+    display: inline-block;
+}
+
+/* lien paramètres du compte hors mobile */
+.user_settings {
+    display:none;
+    
+}
+
+/* Logo deconnexion mobile */
+.logout {
+    height:20px;
+    width:20px;
+    display: inline-block;
+
+}
+
+
+/* lien Déconnexion hors mobile */
+.end_session {
+    display:none;
+}
+
+.mobile_icon
+{
+    position:relative;
+    right:130px;
+    top:10px;
+}
+
+
+
+/* Logo utilisateurs */
+.user{
+    display:none;
+    
+}
+
+/* Espace paramètres */
+.informations_membres{
+    width:300px;
+    background: #f1f1f1;
+    border-radius:5px;
+    border:1px solid #e7e7e7;
+    margin-top:20px;
+    text-align: center;
+    padding:10px 10px;
+}
+
+input {
+    height: 30px;
+    width: 250px;
+    border: 1px solid red;
+    text-align: center;
+    margin-top:20px;
+    margin-bottom:10px;
+}
+
+.bouton_modifs {
+    color: #fff;
+    background: red;
+    width: 250px;
+    border: 1px solid #fff;
+    margin-top: 20px;
+    border-radius: 7px;
+    font-size: 14px;
+}
+
+.bouton_modifs:hover {
+    color: #fff;
+    background: black;
+    width: 250px;
+    border: 1px solid #fff;
+    margin-top: 20px;
+    border-radius: 7px;
+    font-size: 14px;
+}
+
+/* Section presentation acteurs page */
+.act_presentation {
+    height: 450px;
+    width: 300px;
+    background-color:#f1f1f1;
+    border-radius: 5px;
+    margin-top: 50px;
+    text-align:center;
+    border: 1px solid #d2d2d2;
+
+}
+
+/* images de présentation */
+.act_img {
+    height:100px;
+    width:250px;
+    border:1px solid black;
+    margin-top:30px;
+}
+
+/* Titre H2 Présentation */
+.act_presentation>h2 {
+    color:red;
+    margin-top:10px;
+    font-size:18px;
+}
+
+/* Texte H2 Présentation */
+.act_presentation>p {
+    height:500px;
+    width:250px;
+    margin-top:10px;
+    margin-left:30px;
+    font-size:12px;
+}
+
+/* Bouton retour */
+.act_presentation>a {
+    background-color:red;
+    padding:5px 10px 5px 10px ;
+    border-radius:2px;
+    position:relative;
+    bottom:270px;
+}
+.act_presentation>a:hover {
+    background-color:black;
+    padding:5px 10px 5px 10px ;
+    border-radius:2px;
+}
+
+ /* Espace commentaire */
+ .commentaires{
+    text-align: center; 
+    width:290px;
+    justify-content: center;
+
+}
+
+  /* nombres commentaires */
+  .nbrComs
+  {
+      color:red;
+      font-weight: bold;
+      background-color: #fff;
+      height:40px;
+      border-radius:5px;
+      border: 1px solid #d2d2d2;
+      margin-top:10px;
+      position:relative;
+    top:40px;
+    left:40px;
+     
+
+  }
+
+    /* ajoutez commentaires */
+ .ajout_coms{
+    background-color: red;
+    padding:10px 10px;
+    border-radius: 5px;
+    font-size:12px;
+    position:relative;
+      top:1px;
+}
+
+.ajout_coms:hover{
+   background-color: black;
+   padding:10px 10px;
+   border-radius: 5px;
+   font-size:12px;
+  
+ 
+}
+
+/* espace commentaires */
+.coms {
+    width: 260px;
+    background-color: #fff;
+    margin-top:50px;
+    margin-bottom:30px;
+    border: 1px solid #d2d2d2;
+    position:relative;
+    left:10px;
+    top:10px;
+ 
+
+
+}
+
+  /* Espace like */
+  .espacelike{
+    background-color:#fff;
+    height:40px;;
+    width:200px;
+    margin-top:20px;
+    margin-bottom:30px;
+    border: 1px solid #d2d2d2;
+    border-radius: 5px;
+    position:relative;
+    left:40px;
+    top:80px;
+  
+}
+
+   /* image like */
+   .img_like {
+    height:30px;
+    width:30px;
+    position:relative;
+    bottom:16px;
+    right:70px;
+    background-color: green;
+    padding:5px 5px;
+    border-radius: 3px;
+}
+
+.img_like:hover {
+  height:30px;
+  width:30px;
+  position:relative;
+  bottom:16px;
+  right:70px;
+  background-color: greenyellow;
+  padding:5px 5px;
+  border-radius: 3px;
+}
+
+   /* boutons like */
+   .like{
+    color:green;
+    font-weight: bold;
+    background-color: #fff;
+    height:20px;
+    width:30px;
+    border-radius: 5px;
+    position:relative;
+    top:10px;
+    left:50px;
+    border:1px solid #d2d2d2;   
+}
+
+ /* image dislike */
+ .img_dislike {
+    height:30px;
+    width:30px;
+    position:relative;
+    right:40px;
+    bottom:27px;
+    background-color:red;
+    padding:5px 5px;
+    border-radius:3px;
+}
+.img_dislike:hover {
+    height:30px;
+    width:30px;
+    position:relative;
+    right:40px;
+    bottom:27px;
+    background-color:lightcoral;
+    padding:5px 5px;
+    border-radius:3px;
+}
+
+     /* boutons dislike */
+     .dislike{
+        color:red;
+        font-weight: bold;
+        background-color:#fff;
+        height:20px;
+        width:30px;
+        border-radius: 5px;
+        position:relative;
+        left:145px;
+        bottom:43px;
+        border:1px solid #d2d2d2;
+       
+    }
+ 
+         /* Formulaire commentaire */
+    .formcoms
+    {
+        width:300px;
+        margin-top:130px;
+        text-align: center;
+    }
+
+     /* textarea commentaire */
+ .inputcoms {
+    height:247px;
+    width:300px;
+    margin-top:20px;
+    text-align: center;
+
+ }
+ .commentaires_coms
+ {
+     font-size:14px;
+ }
+
+}
+
+
+@media all and (min-width: 375px) and (max-width: 425px)
+{
+
+/* Logo GBAF */
+.logo {
+    height: 90px;
+    width: 90px;
+    z-index: 1;
+    margin-left: 120px;
+
+}
+
+.logo:hover{
+    opacity: 0.65;
+}
+
+/* Texte bonjour utilisateur */
+.bonjour {
+    font-weight: bold;
+    font-size:12px;
+    position:relative;
+    top:120px;
+    left:-10px;
+}
+
+.mobile_icon
+{
+    position:relative;
+    bottom:20px;
+    right:160px;
+}
+
+/* Section presentation acteurs page */
+.act_presentation {
+    height: 450px;
+    width: 330px;
+    background-color:#f1f1f1;
+    border-radius: 5px;
+    margin-top: 50px;
+    text-align:center;
+    border: 1px solid #d2d2d2;
+
+}
+
+ /* Espace commentaire */
+ .commentaires{
+    text-align: center; 
+    width:330px;
+    justify-content: center;
+
+}
+
+/* espace commentaires */
+.coms {
+    width: 300px;
+    background-color: #fff;
+    margin-top:50px;
+    margin-bottom:30px;
+    border: 1px solid #d2d2d2;
+    position:relative;
+    left:10px;
+    top:10px;
+}
+
+ /* Espace like */
+ .espacelike{
+    background-color:#fff;
+    height:40px;;
+    width:200px;
+    margin-top:20px;
+    margin-bottom:30px;
+    border: 1px solid #d2d2d2;
+    border-radius: 5px;
+    position:relative;
+    left:60px;
+    top:80px;
+  
+}
+
+  /* nombres commentaires */
+  .nbrComs
+  {
+      color:red;
+      font-weight: bold;
+      background-color: #fff;
+      height:40px;
+      border-radius:5px;
+      border: 1px solid #d2d2d2;
+      margin-top:10px;
+      position:relative;
+    top:40px;
+    left:60px;
+     
+
+  }
+}
+
+@media all and (min-width: 425px) and (max-width: 768px)
+{
+
+/* Logo GBAF */
+.logo {
+    height: 90px;
+    width: 90px;
+    z-index: 1;
+    margin-left: 150px;
+
+}
+
+.logo:hover{
+    opacity: 0.65;
+}
+
+/* Texte bonjour utilisateur */
+.bonjour {
+    font-weight: bold;
+    font-size:12px;
+    position:relative;
+    top:120px;
+    left:-30px;
+}
+
+.mobile_icon
+{
+    position:relative;
+    bottom:20px;
+    right:180px;
+    
+}
+
+/* Section presentation acteurs */
+.presentation_acteurs {
+    height:300px;
+    width:400px;
+    background-color:#e7e7e7;
+    box-shadow: 1px 1px 6px 1px #e7e7e7;
+    border: 1px solid #d2d2d2;
+
+}
+
+/* Section presentation texte acteurs */
+.presentation_acteurs>p {
+    margin-top:20px;
+    font-size:12px;
+    position:relative;
+    top:110px;
+    right:280px;
+    width:350px;
+    word-wrap : break-word; 
+}
+
+/* Bouton lire la suite acteurs */
+.bouton_lire {
+    color:#fff;
+    font-size:14px;
+    background-color:red;
+    box-sizing: border-box;
+    padding:3px 3px;
+    border-radius:5px;
+    position:relative;
+    left:280px;
+    top:190px;
+
+
+}
+
+.bouton_lire:hover {
+    color:#fff;
+    background-color:black;
+    box-sizing: border-box;
+    padding:3px 3px;
+    border-radius:5px;
+    position:relative;
+    left:280px;
+    top:190px;
+}
+
+/* Section presentation acteurs page */
+.act_presentation {
+    height: 450px;
+    width: 370px;
+    background-color:#f1f1f1;
+    border-radius: 5px;
+    margin-top: 50px;
+    text-align:center;
+    border: 1px solid #d2d2d2;
+
+}
+
+/* Texte H2 Présentation */
+.act_presentation>p {
+    height:500px;
+    width:300px;
+    margin-top:10px;
+    margin-left:30px;
+    font-size:12px;
+}
+
+/* espace commentaires */
+.coms {
+    width: 300px;
+    background-color: #fff;
+    margin-top:50px;
+    margin-bottom:30px;
+    border: 1px solid #d2d2d2;
+    position:relative;
+    left:35px;
+    top:10px;
+ 
+
+
+}
+
+ /* Espace commentaire */
+ .commentaires{
+    text-align: center; 
+    width:370px;
+    justify-content: center;
+
+}
+
+  /* Espace like */
+  .espacelike{
+    background-color:#fff;
+    height:40px;;
+    width:200px;
+    margin-top:20px;
+    margin-bottom:30px;
+    border: 1px solid #d2d2d2;
+    border-radius: 5px;
+    position:relative;
+    left:80px;
+    top:80px;
+  
+}
+
+ /* nombres commentaires */
+ .nbrComs
+ {
+     color:red;
+     font-weight: bold;
+     background-color: #fff;
+     height:40px;
+     border-radius:5px;
+     border: 1px solid #d2d2d2;
+     margin-top:10px;
+     position:relative;
+   top:40px;
+   left:80px;
+ }
+
+}

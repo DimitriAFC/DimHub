@@ -71,7 +71,9 @@ if(isset($_GET['id']) AND !empty($_GET['id']))
 
 				<head>
 					<meta charset="utf-8">
-					<link type="text/css" rel="stylesheet" href="css/cstyles.css" />
+               <link type="text/css" rel="stylesheet" href="css/cstyles.css" />
+               <link type="text/css" rel="stylesheet" href="css/cstylesmobiles.css" />
+               <link type="text/css" rel="stylesheet" href="css/ctablettestyle.css" />
 					<meta name="viewport" content="width=device-width, initial-scale=1">
 					<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
 					<title>Projet 3</title>
@@ -81,15 +83,16 @@ if(isset($_GET['id']) AND !empty($_GET['id']))
 					<?php require('include/header.php')?>
 						<div class="container">
 							<form class="formcoms" method="post">
-								<?php if(isset($erreur)) { echo "<span style='font-weight:bold;'> "  .$erreur. " </span>"; } ?></br>
+								<?php if(isset($erreur)) { echo "<span style='font-weight:bold;'> "  .$erreur. " </span>"; } ?><br>
 						
 									<br/>
-									<textarea class="inputcoms" type="text" placeholder="Votre commentaire (Max 255 caractères)" maxlength="285" name="message"></textarea>
+									<textarea class="inputcoms" placeholder="Votre commentaire (Max 255 caractères)" maxlength="285" name="message"></textarea>
 									<br/>
 									<input class="btnCommentaires" type="submit" value="Envoyer" name="comfirm">
 									<br/>
 									<br/> </form>
 						</div>
+                  <div class="espace_blanc"></div>
 						<?php require('include/footer.php')?>
 				</body>
 

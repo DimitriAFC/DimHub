@@ -40,13 +40,14 @@
 			<meta charset="utf-8">
 			<link type="text/css" rel="stylesheet" href="css/hcstyles.css" />
 			<link type="text/css" rel="stylesheet" href="css/hcstylesmobiles.css" />
-			<meta name=viewport content="width=device-width, initial-scale=1">
+			<link type="text/css" rel="stylesheet" href="css/hctablettestyle.css" />
+			<meta name="viewport" content="width=device-width, initial-scale=1">
 			<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
 			<title>Projet 3</title>
 		</head>
 
 		<body>
-			<?php require('include/header.php');?>
+		<?php require('include/headerindex.php')?>
 				<main id="connexion">
 					<div class="container">
 						<h2 class="bouton_page"><a href="index.php">Revenir à l'accueil</a></h2> </div>
@@ -65,6 +66,7 @@
 						</div>
 					</div>
 				</main>
+				<div class="espace_blanc"></div>
 				<?php require('include/footer.php')?>
 		</body>
 
