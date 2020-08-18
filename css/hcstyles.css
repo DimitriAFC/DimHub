@@ -1,226 +1,281 @@
 /* Toutes séléctions */
- * {
-     font-family:Roboto;
-     margin:0;
-     padding:0;
+
+* {
+	font-family: Roboto;
+	margin: 0;
+	padding: 0;
 }
+
 
 /* Page html & body */
- body, html {
-     margin: 0;
-     display: flex;
-     flex-direction: column;
-     min-height: 100vh;
-     background: #f6f6f6;
+
+body,
+html {
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	background: #f6f6f6;
 }
+
 
 /* liens */
- a {
-     text-decoration: none;
-     color: #fff;
+
+a {
+	text-decoration: none;
+	color: #fff;
 }
+
 
 /* LArgeur des container */
- .container {
-     width: 1000px;
-     margin-left: auto;
-     margin-right: auto;
-     display: flex;
-     justify-content: center;
+
+.container {
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+	display: flex;
+	justify-content: center;
 }
+
 
 /* Header */
- #monheader {
-     background-color: white;
-     height: 200px;
-     width: 100%;
-     box-shadow: 1px 1px 10px #e5e5e5;
+
+#monheader {
+	background-color: white;
+	height: 200px;
+	width: 100%;
+	box-shadow: 1px 1px 10px #e5e5e5;
 }
+
+
 /* Titre dans le header */
- .header_title {
-     font-weight: bold;
-     position:absolute;
-     top:160px;
+
+.header_title {
+	font-weight: bold;
+	position: absolute;
+	top: 160px;
 }
+
 
 /* Nom & prénom des séssions */
- .utilisateur {
-     display:none;
+
+.utilisateur {
+	display: none;
 }
+
 
 /* Boutons rouge accueil  */
- .bouton_accueil {
-     background-color: red;
-     border-radius: 10px;
-     color: #fff;
-     padding: 5px 10px 5px 10px;
-     box-shadow: 10px 10px 10px lightgrey;
-     margin-top: 30px;
+
+.bouton_accueil {
+	background-color: red;
+	border-radius: 10px;
+	color: #fff;
+	padding: 5px 10px 5px 10px;
+	box-shadow: 10px 10px 10px lightgrey;
+	margin-top: 30px;
 }
+
 
 /* Boutons rouge retour autres pages  */
- .bouton_page {
-     background-color: red;
-     border-radius: 10px;
-     color: #fff;
-     padding: 5px 10px 5px 10px;
-     box-shadow: 10px 10px 10px lightgrey;
-     margin-top: 30px;
+
+.bouton_page {
+	background-color: red;
+	border-radius: 10px;
+	color: #fff;
+	padding: 5px 10px 5px 10px;
+	box-shadow: 10px 10px 10px lightgrey;
+	margin-top: 30px;
 }
+
+
 /* Pied de page */
- #monfooter {
-     background-color: red;
-     height: 70px;
-     width: 100%;
-     position: relative;
-     top: 80px;
-     margin-top:20px;
+
+#monfooter {
+	background-color: red;
+	height: 70px;
+	width: 100%;
+	position: relative;
+	top: 80px;
+	margin-top: 20px;
 }
 
-/* Infos du footer , mentions etc*/
- .infosfooter {
-     text-align: center;
-}
 
 /* Infos du footer , mentions etc*/
- .infosfooter a {
-     color: #fff;
-     border-radius: 5px;
-     margin: 10px;
-     position: relative;
-     top: 20px;
+
+.infosfooter {
+	text-align: center;
 }
 
+
 /* Infos du footer , mentions etc*/
- .infosfooter a:hover {
-     color: black;
-     border-radius: 5px;
-     margin: 10px;
+
+.infosfooter a {
+	color: #fff;
+	border-radius: 5px;
+	margin: 10px;
+	position: relative;
+	top: 20px;
 }
+
+
+/* Infos du footer , mentions etc*/
+
+.infosfooter a:hover {
+	color: black;
+	border-radius: 5px;
+	margin: 10px;
+}
+
 
 /* Logo GBAF */
- .logo {
-     height: 150px;
-     width: 150px;
+
+.logo {
+	height: 150px;
+	width: 150px;
 }
+
 
 /* Formulaire de connexion */
- .form {
-     text-align: center;
+
+.form {
+	text-align: center;
 }
+
 
 /* Labels du formulaire*/
- label {
-     display: block;
-     margin-bottom: 20px;
-     margin-top: 20px;
-     font-weight: bold;
+
+label {
+	display: block;
+	margin-bottom: 20px;
+	margin-top: 20px;
+	font-weight: bold;
 }
+
 
 /* Inputs du formulaire*/
- input {
-     height: 30px;
-     width: 350px;
-     border: 1px solid red;
-     text-align: center;
+
+input {
+	height: 30px;
+	width: 350px;
+	border: 1px solid red;
+	text-align: center;
 }
+
 
 /* Bouton formulaire envoyer*/
- .bouton_envoyer {
-     color: #fff;
-     background: black;
-     width: 150px;
-     border: 1px solid #fff;
-     margin-top: 60px;
-     border-radius: 7px;
-     font-size: 14px;
+
+.bouton_envoyer {
+	color: #fff;
+	background: black;
+	width: 150px;
+	border: 1px solid #fff;
+	margin-top: 60px;
+	border-radius: 7px;
+	font-size: 14px;
 }
+
 
 /* Bouton formulaire envoyer*/
- .bouton_envoyer:hover {
-     color: #fff;
-     background: red;
-     width: 150px;
-     margin-top: 60px;
+
+.bouton_envoyer:hover {
+	color: #fff;
+	background: red;
+	width: 150px;
+	margin-top: 60px;
 }
+
 
 /* Bouton formulaire enregistrer*/
- .bouton_enregistrer {
-     color: #fff;
-     background: black;
-     width: 150px;
-     border: 1px solid #fff;
-     margin-top: 40px;
-     border-radius: 7px;
-     font-size: 14px;
-     margin-bottom: 50px;
+
+.bouton_enregistrer {
+	color: #fff;
+	background: black;
+	width: 150px;
+	border: 1px solid #fff;
+	margin-top: 40px;
+	border-radius: 7px;
+	font-size: 14px;
+	margin-bottom: 50px;
 }
+
 
 /* Bouton formulaire enregistrer*/
- .bouton_enregistrer:hover {
-     color: #fff;
-     background: red;
-     width: 150px;
-     margin-top: 40px;
-     margin-bottom: 50px;
+
+.bouton_enregistrer:hover {
+	color: #fff;
+	background: red;
+	width: 150px;
+	margin-top: 40px;
+	margin-bottom: 50px;
 }
 
-/* Bouton formulaire renvoyer un mot de passe*/
- .bouton_renvoyer {
-     color: #fff;
-     background: black;
-     width: 200px;
-     border: 1px solid #fff;
-     margin-top: 40px;
-     border-radius: 7px;
-     font-size: 14px;
-     margin-bottom: 200px;
-}
 
 /* Bouton formulaire renvoyer un mot de passe*/
- .bouton_renvoyer:hover {
-     color: #fff;
-     background: red;
-     width: 200px;
-     margin-top: 40px;
-     margin-bottom: 200px;
+
+.bouton_renvoyer {
+	color: #fff;
+	background: black;
+	width: 200px;
+	border: 1px solid #fff;
+	margin-top: 40px;
+	border-radius: 7px;
+	font-size: 14px;
+	margin-bottom: 200px;
 }
+
+
+/* Bouton formulaire renvoyer un mot de passe*/
+
+.bouton_renvoyer:hover {
+	color: #fff;
+	background: red;
+	width: 200px;
+	margin-top: 40px;
+	margin-bottom: 200px;
+}
+
+
 /* S'identifier ou mot de passe oublié */
- .informations {
-     text-align: center;
-     margin-top: 20px;
-     margin-bottom:50px;
+
+.informations {
+	text-align: center;
+	margin-top: 20px;
+	margin-bottom: 50px;
 }
- .informations a {
-     color: black;
-     border-radius: 5px;
-     text-decoration: none;
-     margin: 10px;
+
+.informations a {
+	color: black;
+	border-radius: 5px;
+	text-decoration: none;
+	margin: 10px;
 }
- .informations a:hover {
-     color: red;
-     border-radius: 5px;
-     text-decoration: none;
-     margin: 10px;
+
+.informations a:hover {
+	color: red;
+	border-radius: 5px;
+	text-decoration: none;
+	margin: 10px;
 }
+
+
 /* Message succés index */
 
 .msg {
-     color:#fff;
-     font-weight:bold;
-     background-color:green;
-     padding:5px 49px;
-     margin-top:10px;
-     border-radius:5px;
+	color: #fff;
+	font-weight: bold;
+	background-color: green;
+	padding: 5px 49px;
+	margin-top: 10px;
+	border-radius: 5px;
 }
 
+
 /* question secrète mot de passe oublié */
-.Qsecrete
-{
-     color:red;
-     font-weight: bold;
-     font-size:20px;
-     margin-top:20px;
-     margin-bottom:10px;
+
+.Qsecrete {
+	color: red;
+	font-weight: bold;
+	font-size: 20px;
+	margin-top: 20px;
+	margin-bottom: 10px;
 }
- 

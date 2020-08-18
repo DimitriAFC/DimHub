@@ -1,157 +1,135 @@
-@media all and (min-width: 768px) and (max-width: 1024px)
-{
-    *
-    {
-         margin:0px;
-         padding:0px;
-         box-sizing: border-box;
-    }
-    
-    /* Header*/
-         #monheader {
-             background-color: #fff;
-             height: 250px;
-             width: 100%;
-             box-shadow: 1px 1px 10px #e5e5e5;
-        }
-    
-        /* Containers*/
-         .container {
-             width: 100%;
-             margin-left: auto;
-             margin-right: auto;
-             display: flex;
-        }
-    
-        /* Footer */
-         #monfooter {
-             background-color: red;
-             height: 80px;
-             position: relative;
-             bottom:0px;
-        }
-    
-        /* Inputs*/
-         input {
-             height:50px;
-             width:300px;
-             margin-bottom:20px;
-        }
-
-        label {
-            font-size:24px;
-        }
-    
-        /* Titre du header */
-         .header_title {
-             font-size:18px;
-        }
-    
-    /* Message succés index */
-    .msg {
-         color:#fff;
-         font-weight:bold;
-         background-color:green;
-         padding:5px 5px;
-         margin-top:10px;
-         border-radius:5px;
-    }
-
-    /* Boutons rouge accueil  */
- .bouton_accueil {
-    background-color: red;
-    font-size:24px;
-    border-radius: 10px;
-    color: #fff;
-    padding: 5px 10px 5px 10px;
-    box-shadow: 10px 10px 10px lightgrey;
-    margin-top: 30px;
-    margin-bottom:30px;
+@media all and (min-width: 768px) and (max-width: 1024px) {
+	* {
+		margin: 0px;
+		padding: 0px;
+		box-sizing: border-box;
+	}
+	/* Header*/
+	#monheader {
+		background-color: #fff;
+		height: 250px;
+		width: 100%;
+		box-shadow: 1px 1px 10px #e5e5e5;
+	}
+	/* Containers*/
+	.container {
+		width: 100%;
+		margin-left: auto;
+		margin-right: auto;
+		display: flex;
+	}
+	/* Footer */
+	#monfooter {
+		background-color: red;
+		height: 80px;
+		position: relative;
+		bottom: 0px;
+	}
+	/* Inputs*/
+	input {
+		height: 50px;
+		width: 300px;
+		margin-bottom: 20px;
+	}
+	label {
+		font-size: 24px;
+	}
+	/* Titre du header */
+	.header_title {
+		font-size: 18px;
+	}
+	/* Message succés index */
+	.msg {
+		color: #fff;
+		font-weight: bold;
+		background-color: green;
+		padding: 5px 5px;
+		margin-top: 10px;
+		border-radius: 5px;
+	}
+	/* Boutons rouge accueil  */
+	.bouton_accueil {
+		background-color: red;
+		font-size: 24px;
+		border-radius: 10px;
+		color: #fff;
+		padding: 5px 10px 5px 10px;
+		box-shadow: 10px 10px 10px lightgrey;
+		margin-top: 30px;
+		margin-bottom: 30px;
+	}
+	/* Bouton formulaire envoyer*/
+	.bouton_envoyer {
+		color: #fff;
+		background: black;
+		width: 150px;
+		border: 1px solid #fff;
+		margin-top: 60px;
+		border-radius: 7px;
+		font-size: 22px;
+		margin-bottom: 30px;
+	}
+	/* Bouton formulaire envoyer*/
+	.bouton_envoyer:hover {
+		color: #fff;
+		background: red;
+		width: 150px;
+		margin-top: 60px;
+	}
+	/* S'identifier ou mot de passe oublié */
+	.informations {
+		text-align: center;
+		margin-top: 40px;
+		margin-bottom: 50px;
+		font-size: 24px;
+	}
+	.informations a {
+		color: black;
+		border-radius: 5px;
+		text-decoration: none;
+		margin: 10px;
+	}
+	.informations a:hover {
+		color: red;
+		border-radius: 5px;
+		text-decoration: none;
+		margin: 10px;
+	}
+	/* Boutons rouge retour autres pages  */
+	.bouton_page {
+		background-color: red;
+		border-radius: 10px;
+		color: #fff;
+		padding: 5px 10px 5px 10px;
+		box-shadow: 10px 10px 10px lightgrey;
+		margin-top: 80px;
+		margin-bottom: 30px;
+	}
+	/* Bouton formulaire renvoyer un mot de passe*/
+	.bouton_renvoyer {
+		color: #fff;
+		background: black;
+		width: 200px;
+		border: 1px solid #fff;
+		margin-top: 40px;
+		border-radius: 7px;
+		font-size: 20px;
+		margin-bottom: 155px;
+		margin-top: 30px;
+	}
+	/* Bouton formulaire renvoyer un mot de passe*/
+	.bouton_renvoyer:hover {
+		color: #fff;
+		background: red;
+		width: 200px;
+		margin-top: 40px;
+		margin-bottom: 155px;
+		margin-top: 30px;
+	}
+	.espace_blanc {
+		margin-top: 30px;
+		margin-bottom: 40px;
+	}
 }
 
-/* Bouton formulaire envoyer*/
-.bouton_envoyer {
-    color: #fff;
-    background: black;
-    width: 150px;
-    border: 1px solid #fff;
-    margin-top: 60px;
-    border-radius: 7px;
-    font-size: 22px;
-    margin-bottom:30px;
-}
-
-/* Bouton formulaire envoyer*/
-.bouton_envoyer:hover {
-    color: #fff;
-    background: red;
-    width: 150px;
-    margin-top: 60px;
-}
-
-/* S'identifier ou mot de passe oublié */
-.informations {
-    text-align: center;
-    margin-top: 40px;
-    margin-bottom:50px;
-    font-size:24px;
-}
-.informations a {
-    color: black;
-    border-radius: 5px;
-    text-decoration: none;
-    margin: 10px;
-}
-.informations a:hover {
-    color: red;
-    border-radius: 5px;
-    text-decoration: none;
-    margin: 10px;
-}
-
-/* Boutons rouge retour autres pages  */
-.bouton_page {
-    background-color: red;
-    border-radius: 10px;
-    color: #fff;
-    padding: 5px 10px 5px 10px;
-    box-shadow: 10px 10px 10px lightgrey;
-    margin-top: 80px;
-    margin-bottom:30px;
-}
-
-/* Bouton formulaire renvoyer un mot de passe*/
-.bouton_renvoyer {
-    color: #fff;
-    background: black;
-    width: 200px;
-    border: 1px solid #fff;
-    margin-top: 40px;
-    border-radius: 7px;
-    font-size: 20px;
-    margin-bottom: 155px;
-    margin-top:30px;
-}
-
-/* Bouton formulaire renvoyer un mot de passe*/
-.bouton_renvoyer:hover {
-    color: #fff;
-    background: red;
-    width: 200px;
-    margin-top: 40px;
-    margin-bottom: 155px;
-    margin-top:30px;
-}
-
-.espace_blanc
-{
-    margin-top:30px;
-    margin-bottom:40px;
-}
-
-}
-
-@media all and (min-width: 1024px) and (max-width: 1224px)
-{
-    
-}
+@media all and (min-width: 1024px) and (max-width: 1224px) {}

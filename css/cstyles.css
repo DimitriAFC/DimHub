@@ -1,605 +1,706 @@
 /* Page html */
- * {
-     font-family:Roboto;
-     margin:0;
-     padding:0;
+
+* {
+	font-family: Roboto;
+	margin: 0;
+	padding: 0;
 }
- body, html {
-     margin: 0;
-     min-height: 100vh;
-     background: #f6f6f6;
+
+body,
+html {
+	margin: 0;
+	min-height: 100vh;
+	background: #f6f6f6;
 }
- a {
-     text-decoration: none;
-     color: #fff;
+
+a {
+	text-decoration: none;
+	color: #fff;
 }
+
+
 /* Largeur des container */
- .container {
-     width: 1300px;
-     margin-left: auto;
-     margin-right: auto;
-     display: flex;
-     justify-content: center;
+
+.container {
+	width: 1300px;
+	margin-left: auto;
+	margin-right: auto;
+	display: flex;
+	justify-content: center;
 }
+
+
 /* Header */
- #monheader {
-     background-color: white;
-     height: 150px;
-     width: 100%;
-     box-shadow: 1px 1px 10px #e5e5e5;
-     
+
+#monheader {
+	background-color: white;
+	height: 150px;
+	width: 100%;
+	box-shadow: 1px 1px 10px #e5e5e5;
 }
+
 
 /* Titre header */
- .header_title {
-     display:none;
+
+.header_title {
+	display: none;
 }
+
 
 /* Nom prénom et paramètres, déconnexion */
+
 .espace_mbr {
-    height:130px;
-    display:flex;
-    flex-direction: column;
-    padding:5px 15px;
-    position:absolute;
-    right:100px;
+	height: 130px;
+	display: flex;
+	flex-direction: column;
+	padding: 5px 15px;
+	position: absolute;
+	right: 100px;
 }
+
 
 /* Images parametres */
-.user {
-    height:40px;
-    width:40px;
-    position:relative;
-    left:50px;
-    margin-bottom:10px;
 
-   
+.user {
+	height: 40px;
+	width: 40px;
+	position: relative;
+	left: 50px;
+	margin-bottom: 10px;
 }
+
 
 /* Texte bonjour nom & prénom */
+
 .bonjour {
-    font-weight: bold;
-    font-size:14px;
-    margin-bottom:5px;
+	font-weight: bold;
+	font-size: 14px;
+	margin-bottom: 5px;
 }
+
 
 /* Déconnexion */
+
 .end_session {
-    color:red;
-    font-weight: bold;
-    font-size:14px;
+	color: red;
+	font-weight: bold;
+	font-size: 14px;
 }
+
 
 /* Déco hover */
-.end_session:hover {
-    color:red;
-    font-weight: bold;
-    font-size:14px;
-    text-decoration: underline overline red;
-    
 
+.end_session:hover {
+	color: red;
+	font-weight: bold;
+	font-size: 14px;
+	text-decoration: underline overline red;
 }
 
+
 /* Pages paramètres du compte */
+
 .user_settings {
-    color:black;
-    font-weight: bold;
-    font-size:14px;
-    margin-bottom:5px;
+	color: black;
+	font-weight: bold;
+	font-size: 14px;
+	margin-bottom: 5px;
 }
 
 .user_settings:hover {
-    color:black;
-    font-weight: bold;
-    font-size:14px;
-    margin-bottom:5px;
-    text-decoration: underline overline black;
+	color: black;
+	font-weight: bold;
+	font-size: 14px;
+	margin-bottom: 5px;
+	text-decoration: underline overline black;
 }
+
 
 /* Pied de page */
- #monfooter {
-     background-color: red;
-     height: 70px;
-     width: 100%;
-     position: relative;
-     top: 65px;
-     margin-top:20px;
+
+#monfooter {
+	background-color: red;
+	height: 70px;
+	width: 100%;
+	position: relative;
+	top: 65px;
+	margin-top: 20px;
 }
+
 
 /* Mentions légales footer */
- .infosfooter {
-     text-align: center;
+
+.infosfooter {
+	text-align: center;
 }
- .infosfooter a {
-     color: #fff;
-     border-radius: 5px;
-     margin: 10px;
-     position: relative;
-     top: 20px;
+
+.infosfooter a {
+	color: #fff;
+	border-radius: 5px;
+	margin: 10px;
+	position: relative;
+	top: 20px;
 }
- .infosfooter a:hover {
-     color: black;
-     border-radius: 5px;
-     margin: 10px;
+
+.infosfooter a:hover {
+	color: black;
+	border-radius: 5px;
+	margin: 10px;
 }
+
 
 /* Logo GBAF */
- .logo {
-     height: 120px;
-     width: 120px;
-     position:absolute;
-     left:20px;
+
+.logo {
+	height: 120px;
+	width: 120px;
+	position: absolute;
+	left: 20px;
 }
 
-.logo:hover{
-    opacity: 0.65;
+.logo:hover {
+	opacity: 0.65;
 }
+
 
 /* Section presentation GBAF */
- #presentation_gbaf {
-     text-align:center;
-     margin-top: 50px;
-     margin-bottom:80px;
-     width: 1300px;
-     margin-left: auto;
-     margin-right: auto;
-     justify-content: center;
+
+#presentation_gbaf {
+	text-align: center;
+	margin-top: 50px;
+	margin-bottom: 80px;
+	width: 1300px;
+	margin-left: auto;
+	margin-right: auto;
+	justify-content: center;
 }
+
+
 /* Span */
- span {
-     color:red;
+
+span {
+	color: red;
 }
+
+
 /* Titre présentation GBAF */
- #presentation_gbaf>h1 {
-     color:red;
+
+#presentation_gbaf>h1 {
+	color: red;
 }
+
 
 /* Texte présentation GBAF */
- #presentation_gbaf>p {
-     margin:10px;
+
+#presentation_gbaf>p {
+	margin: 10px;
 }
+
 
 /* Image dé présentation */
- .img_presentation {
-     Height:300px;
-     width:100%;
-     border:1px solid #d2d2d2;
+
+.img_presentation {
+	Height: 300px;
+	width: 100%;
+	border: 1px solid #d2d2d2;
 }
+
 
 /* Section presentation partenaires */
- #presentation_partenaires {
-     text-align: center;
-     margin-bottom:50px;
-     margin-left: auto;
-     margin-right: auto;
-     justify-content: center;
+
+#presentation_partenaires {
+	text-align: center;
+	margin-bottom: 50px;
+	margin-left: auto;
+	margin-right: auto;
+	justify-content: center;
 }
+
 
 /* Titre présentation partenaires */
- #presentation_partenaires>h2 {
-     color:red;
-     margin:10px;
+
+#presentation_partenaires>h2 {
+	color: red;
+	margin: 10px;
 }
+
+
 /* Section presentation acteurs */
- .presentation_acteurs {
-     height:200px;
-     width:800px;
-     background-color:#e7e7e7;
-     box-shadow: 1px 1px 6px 1px #e7e7e7;
-     margin-bottom:100px;
-     border: 1px solid #d2d2d2;
+
+.presentation_acteurs {
+	height: 200px;
+	width: 800px;
+	background-color: #e7e7e7;
+	box-shadow: 1px 1px 6px 1px #e7e7e7;
+	margin-bottom: 100px;
+	border: 1px solid #d2d2d2;
 }
+
 
 /* Logo des acteurs */
- .logo_acteurs {
-     height:100px;
-     width:250px;
-     border:1px solid black;
-     margin-left:20px;
-     margin-top:20px;
+
+.logo_acteurs {
+	height: 100px;
+	width: 250px;
+	border: 1px solid black;
+	margin-left: 20px;
+	margin-top: 20px;
 }
+
 
 /* Titre des acteurs */
- .presentation_acteurs>h3 {
-    Color:red;
-     margin-left:300px;
-     margin-top:-100px;
+
+.presentation_acteurs>h3 {
+	Color: red;
+	margin-left: 300px;
+	margin-top: -100px;
 }
+
 
 /* Textes des acteurs */
- .presentation_acteurs>p {
-     margin-top:20px;
-     height:10px;
-     width:500px;
-     margin-left:300px;
+
+.presentation_acteurs>p {
+	margin-top: 20px;
+	height: 10px;
+	width: 500px;
+	margin-left: 300px;
 }
+
 
 /* Bouton lire la suite */
- .bouton_lire {
-     color:#fff;
-     background-color:red;
-     box-sizing: border-box;
-     padding:7px 7px 7px 7px;
-     border-radius:10px;
-     position:relative;
-     top:90px;
-     left:700px;
+
+.bouton_lire {
+	color: #fff;
+	background-color: red;
+	box-sizing: border-box;
+	padding: 7px 7px 7px 7px;
+	border-radius: 10px;
+	position: relative;
+	top: 90px;
+	left: 700px;
 }
 
- .bouton_lire:hover {
-     color:#fff;
-     background-color:black;
-     box-sizing: border-box;
-     padding:7px 7px 7px 7px;
-     border-radius:10px;
-     position:relative;
-     top:90px;
-     left:700px;
+.bouton_lire:hover {
+	color: #fff;
+	background-color: black;
+	box-sizing: border-box;
+	padding: 7px 7px 7px 7px;
+	border-radius: 10px;
+	position: relative;
+	top: 90px;
+	left: 700px;
 }
+
 
 /* Section presentation acteurs page */
- .act_presentation {
-     height: 450px;
-     width: 1000px;
-     background-color:#f1f1f1;
-     border-radius: 5px;
-     margin-top: 50px;
-     text-align:center;
-     border: 1px solid #d2d2d2;
 
+.act_presentation {
+	height: 450px;
+	width: 1000px;
+	background-color: #f1f1f1;
+	border-radius: 5px;
+	margin-top: 50px;
+	text-align: center;
+	border: 1px solid #d2d2d2;
 }
+
+
 /* Session commentaires*/
- .commentaires {
-     width: 1100px;
-     background-color: #f1f1f1;
-     margin-top: 50px;
-     margin-bottom:50px;
-     border-radius: 5px;
-     border: 1px solid #d2d2d2;
+
+.commentaires {
+	width: 1100px;
+	background-color: #f1f1f1;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	border-radius: 5px;
+	border: 1px solid #d2d2d2;
 }
+
+
 /* images de présentation */
- .act_img {
-     height:100px;
-     width:300px;
-     border:1px solid black;
-     margin-top:30px;
+
+.act_img {
+	height: 100px;
+	width: 300px;
+	border: 1px solid black;
+	margin-top: 30px;
 }
+
+
 /* Titre H2 Présentation */
- .act_presentation>h2 {
-     color:red;
-     margin-top:50px;
+
+.act_presentation>h2 {
+	color: red;
+	margin-top: 50px;
 }
+
+
 /* Texte H2 Présentation */
- .act_presentation>p {
-     height:300px;
-     width:800px;
-     margin-top:30px;
-     margin-left:100px;
+
+.act_presentation>p {
+	height: 300px;
+	width: 800px;
+	margin-top: 30px;
+	margin-left: 100px;
 }
+
+
 /* Bouton retour */
- .act_presentation>a {
-     background-color:red;
-     padding:5px 10px 5px 10px ;
-     border-radius:2px;
-     position:relative;
-     bottom:150px;
-}
- .act_presentation>a:hover {
-     background-color:black;
-     padding:5px 10px 5px 10px ;
-     border-radius:2px;
-}
- 
- /* Formulaire ajout commentaire */
- .formCommentaires {
-     height:190px;
-     width:500px;
-     background-color:#f1f1f1;
-     margin-top:40px;
-     text-align:center;
-     padding-top:20px;
-     border: 1px solid #d2d2d2;
- }
 
- /* Bouton Formulaire ajout commentaire */
- .btnCommentaires{
-       color: #fff;
-     background: red;
-     padding:5px 10px;
-     border: 1px solid #fff;
-     margin-top: 10px;
-     border-radius: 2px;
-     font-size: 14px;
- }
+.act_presentation>a {
+	background-color: red;
+	padding: 5px 10px 5px 10px;
+	border-radius: 2px;
+	position: relative;
+	bottom: 150px;
+}
 
-  .btnCommentaires:hover{
-       color: #fff;
-     background: black;
-     padding:5px 10px;
-     border: 1px solid #fff;
-     margin-top: 10px;
-     border-radius: 2px;
-     font-size: 14px;
- }
+.act_presentation>a:hover {
+	background-color: black;
+	padding: 5px 10px 5px 10px;
+	border-radius: 2px;
+}
+
+
+/* Formulaire ajout commentaire */
+
+.formCommentaires {
+	height: 190px;
+	width: 500px;
+	background-color: #f1f1f1;
+	margin-top: 40px;
+	text-align: center;
+	padding-top: 20px;
+	border: 1px solid #d2d2d2;
+}
+
+
+/* Bouton Formulaire ajout commentaire */
+
+.btnCommentaires {
+	color: #fff;
+	background: red;
+	padding: 5px 10px;
+	border: 1px solid #fff;
+	margin-top: 10px;
+	border-radius: 2px;
+	font-size: 14px;
+}
+
+.btnCommentaires:hover {
+	color: #fff;
+	background: black;
+	padding: 5px 10px;
+	border: 1px solid #fff;
+	margin-top: 10px;
+	border-radius: 2px;
+	font-size: 14px;
+}
+
 
 /* Titre Formulaire */
- .titreCommentaires{
-     color:red;
-     font-size: 18px;
-   
- }
 
- /* textarea commentaire */
- .inputcoms {
-    height:247px;
-    width:400px;
-    margin-top:20px;
-    text-align: center;
-
- }
-
- /* Espace commentaire */
- .commentaires{
-     text-align: center; 
- }
-
- /* formulaire commentaire */
- .formcoms
- {
-     margin-top:130px;
-     text-align: center;
- }
-
-  /* Espace like */
-  .espacelike{
-      background-color:#fff;
-      height:60px;;
-      width:200px;
-      margin-bottom:30px;
-      border: 1px solid #d2d2d2;
-      border-radius: 5px;
-      position:relative;
-      top:20px;
-      left:800px;
-  }
-
-    /* boutons like */
-    .like{
-        color:green;
-        font-weight: bold;
-        background-color: #fff;
-        height:20px;
-        width:30px;
-        border-radius: 5px;
-        position:relative;
-        top:30px;
-        left:55px;
-        border:1px solid #d2d2d2;   
-    }
-
-      /* image like */
-      .img_like {
-          height:20px;
-          width:20px;
-          position:relative;
-          right:70px;
-          background-color: green;
-          padding:5px 5px;
-          border-radius: 3px;
-      }
-
-      .img_like:hover {
-        height:20px;
-        width:20px;
-        position:relative;
-        right:70px;
-        background-color: greenyellow;
-        padding:5px 5px;
-        border-radius: 3px;;
-    }
-
-
-     /* boutons dislike */
-     .dislike{
-        color:red;
-        font-weight: bold;
-        background-color:#fff;
-        height:20px;
-        width:30px;
-        border-radius: 5px;
-        position:relative;
-        left:145px;
-        bottom:26px;
-        border:1px solid #d2d2d2;
-       
-    }
-
- /* image dislike */
- .img_dislike {
-    height:20px;
-    width:20px;
-    position:relative;
-    right:40px;
-    bottom:30px;
-    background-color:red;
-    padding:5px 5px;
-    border-radius:3px;
+.titreCommentaires {
+	color: red;
+	font-size: 18px;
 }
+
+
+/* textarea commentaire */
+
+.inputcoms {
+	height: 247px;
+	width: 400px;
+	margin-top: 20px;
+	text-align: center;
+}
+
+
+/* Espace commentaire */
+
+.commentaires {
+	text-align: center;
+}
+
+
+/* formulaire commentaire */
+
+.formcoms {
+	margin-top: 130px;
+	text-align: center;
+}
+
+
+/* Espace like */
+
+.espacelike {
+	background-color: #fff;
+	height: 60px;
+	;
+	width: 200px;
+	margin-bottom: 30px;
+	border: 1px solid #d2d2d2;
+	border-radius: 5px;
+	position: relative;
+	top: 20px;
+	left: 800px;
+}
+
+
+/* boutons like */
+
+.like {
+	color: green;
+	font-weight: bold;
+	background-color: #fff;
+	height: 20px;
+	width: 30px;
+	border-radius: 5px;
+	position: relative;
+	top: 30px;
+	left: 55px;
+	border: 1px solid #d2d2d2;
+}
+
+
+/* image like */
+
+.img_like {
+	height: 20px;
+	width: 20px;
+	position: relative;
+	right: 70px;
+	background-color: green;
+	padding: 5px 5px;
+	border-radius: 3px;
+}
+
+.img_like:hover {
+	height: 20px;
+	width: 20px;
+	position: relative;
+	right: 70px;
+	background-color: greenyellow;
+	padding: 5px 5px;
+	border-radius: 3px;
+	;
+}
+
+
+/* boutons dislike */
+
+.dislike {
+	color: red;
+	font-weight: bold;
+	background-color: #fff;
+	height: 20px;
+	width: 30px;
+	border-radius: 5px;
+	position: relative;
+	left: 145px;
+	bottom: 26px;
+	border: 1px solid #d2d2d2;
+}
+
+
+/* image dislike */
+
+.img_dislike {
+	height: 20px;
+	width: 20px;
+	position: relative;
+	right: 40px;
+	bottom: 30px;
+	background-color: red;
+	padding: 5px 5px;
+	border-radius: 3px;
+}
+
 .img_dislike:hover {
-    height:20px;
-    width:20px;
-    position:relative;
-    right:40px;
-    bottom:30px;
-    background-color:lightcoral;
-    padding:5px 5px;
-    border-radius:3px;
+	height: 20px;
+	width: 20px;
+	position: relative;
+	right: 40px;
+	bottom: 30px;
+	background-color: lightcoral;
+	padding: 5px 5px;
+	border-radius: 3px;
 }
 
- /* espace commentaires */
- .coms {
-     width: 600px;
-     background-color: #fff;
-     margin-bottom:30px;
-     border: 1px solid #d2d2d2;
-     position:relative;
-     left:230px;
-     bottom:50px;
- }
 
-  /* bande rouge commentaires */
- .commentaires_coms{
-     background-color:red;
-     height:20px;
-     width:100%;
-     color:#fff;
-     font-weight: bold;
-     font-size:18px;
-    
- }
-  /* ajoutez commentaires */
- .ajout_coms{
-     background-color: red;
-     padding:5px 10px;
-     border-radius: 5px;
- }
+/* espace commentaires */
 
- .ajout_coms:hover{
-    background-color: black;
-    padding:5px 10px;
-    border-radius: 5px;
-  
+.coms {
+	width: 600px;
+	background-color: #fff;
+	margin-bottom: 30px;
+	border: 1px solid #d2d2d2;
+	position: relative;
+	left: 230px;
+	bottom: 50px;
 }
+
+
+/* bande rouge commentaires */
+
+.commentaires_coms {
+	background-color: red;
+	height: 20px;
+	width: 100%;
+	color: #fff;
+	font-weight: bold;
+	font-size: 18px;
+}
+
+
+/* ajoutez commentaires */
+
+.ajout_coms {
+	background-color: red;
+	padding: 5px 10px;
+	border-radius: 5px;
+}
+
+.ajout_coms:hover {
+	background-color: black;
+	padding: 5px 10px;
+	border-radius: 5px;
+}
+
 
 /* Bouton ajouter commentaires */
-.addComs
-{
-    position:relative;
-    bottom:60px;
+
+.addComs {
+	position: relative;
+	bottom: 60px;
 }
 
-  /* decoration commentaires */
+
+/* decoration commentaires */
+
 .message_coms {
-    font-size:14px;
-    text-align:left;
-    margin-top:15px;
-    margin-left:10px;
-    margin-right:10px;
-    margin-bottom:10px;
-    background-color:#fcfcfc;
-    border: 1px solid #e7e7e7;
-    border-radius : 5px;
-    padding-top:5px;
-    padding-left:5px;
-    word-wrap : break-word; 
-    
+	font-size: 14px;
+	text-align: left;
+	margin-top: 15px;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	background-color: #fcfcfc;
+	border: 1px solid #e7e7e7;
+	border-radius: 5px;
+	padding-top: 5px;
+	padding-left: 5px;
+	word-wrap: break-word;
 }
-  /* nombres commentaires */
-.nbrComs
-{
-    color:red;
-    font-weight: bold;
-    width:200px;
-    position:relative;
-    bottom:90px;
-    left:70px;
-    background-color: #fff;
-    height:50px;
-    border-radius:5px;
-    border: 1px solid #d2d2d2;
-    text-align: center;
-    padding-top:10px;
+
+
+/* nombres commentaires */
+
+.nbrComs {
+	color: red;
+	font-weight: bold;
+	width: 200px;
+	position: relative;
+	bottom: 90px;
+	left: 70px;
+	background-color: #fff;
+	height: 50px;
+	border-radius: 5px;
+	border: 1px solid #d2d2d2;
+	text-align: center;
+	padding-top: 10px;
 }
+
 
 /* Message d'erreurs */
-.msg_erreur
-{
-    margin-top:20px;
-    padding: 5px 5px;
+
+.msg_erreur {
+	margin-top: 20px;
+	padding: 5px 5px;
 }
+
 
 /* Espace membre */
-.informations_membres{
-    width:500px;
-    background: #f1f1f1;
-    border-radius:5px;
-    border:1px solid #e7e7e7;
-    margin-top:20px;
-    text-align: center;
-    padding:10px 10px;
+
+.informations_membres {
+	width: 500px;
+	background: #f1f1f1;
+	border-radius: 5px;
+	border: 1px solid #e7e7e7;
+	margin-top: 20px;
+	text-align: center;
+	padding: 10px 10px;
 }
+
 
 /* Formulaire page paramètres du compte */
-.formulaire_modification{
-    justify-content: center;
 
+.formulaire_modification {
+	justify-content: center;
 }
 
-.bouton_infos
-{
-    background-color: red;
-     border-radius: 10px;
-     color: #fff;
-     padding: 5px 10px 5px 10px;
-     box-shadow: 10px 10px 10px lightgrey;
-     margin-top: 60px;
+.bouton_infos {
+	background-color: red;
+	border-radius: 10px;
+	color: #fff;
+	padding: 5px 10px 5px 10px;
+	box-shadow: 10px 10px 10px lightgrey;
+	margin-top: 60px;
 }
 
 label {
-    font-weight: bold;
-
+	font-weight: bold;
 }
 
 .label {
-    margin-top:10px;
-    margin-bottom:10px;
-    font-weight: bold;
-    color:red;
-   
-
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-weight: bold;
+	color: red;
 }
 
 input {
-    height: 30px;
-    width: 350px;
-    border: 1px solid red;
-    text-align: center;
-    margin-top:20px;
-    margin-bottom:10px;
+	height: 30px;
+	width: 350px;
+	border: 1px solid red;
+	text-align: center;
+	margin-top: 20px;
+	margin-bottom: 10px;
 }
 
 .bouton_modifs {
-    color: #fff;
-    background: red;
-    width: 350px;
-    border: 1px solid #fff;
-    margin-top: 20px;
-    border-radius: 7px;
-    font-size: 14px;
+	color: #fff;
+	background: red;
+	width: 350px;
+	border: 1px solid #fff;
+	margin-top: 20px;
+	border-radius: 7px;
+	font-size: 14px;
 }
 
 .bouton_modifs:hover {
-    color: #fff;
-    background: black;
-    width: 350px;
-    border: 1px solid #fff;
-    margin-top: 20px;
-    border-radius: 7px;
-    font-size: 14px;
+	color: #fff;
+	background: black;
+	width: 350px;
+	border: 1px solid #fff;
+	margin-top: 20px;
+	border-radius: 7px;
+	font-size: 14px;
 }
 
+
 /* Message d'erreurs parametres compte */
-.messageErreur
-{
-    color:red;
-    margin-top:20px;
-    font-weight: bold;
+
+.messageErreur {
+	color: red;
+	margin-top: 20px;
+	font-weight: bold;
 }
 
 .settings {
-    display:none;
+	display: none;
 }
 
 .logout {
-    display:none;
+	display: none;
 }

@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version OVH
 -- https://www.phpmyadmin.net/
 --
--- Hôte : 127.0.0.1
--- Généré le : lun. 10 août 2020 à 15:41
--- Version du serveur :  10.4.11-MariaDB
--- Version de PHP : 7.4.6
+-- Hôte : cdmfuqcdimitri.mysql.db
+-- Généré le :  mar. 18 août 2020 à 12:24
+-- Version du serveur :  5.6.48-log
+-- Version de PHP :  7.2.31
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -18,8 +19,10 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `gbaf`
+-- Base de données :  `cdmfuqcdimitri`
 --
+CREATE DATABASE IF NOT EXISTS `cdmfuqcdimitri` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `cdmfuqcdimitri`;
 
 -- --------------------------------------------------------
 
@@ -54,7 +57,7 @@ CREATE TABLE `commentaires` (
   `id_post` int(11) NOT NULL,
   `id_acteurs` int(11) NOT NULL,
   `id_user` int(11) NOT NULL,
-  `date` datetime NOT NULL DEFAULT current_timestamp(),
+  `date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `commentaire` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -63,10 +66,10 @@ CREATE TABLE `commentaires` (
 --
 
 INSERT INTO `commentaires` (`id_post`, `id_acteurs`, `id_user`, `date`, `commentaire`) VALUES
-(128, 2, 15, '2020-08-10 11:25:33', 'Formation &amp; Co'),
-(129, 2, 18, '2020-08-10 11:26:12', 'Essaie Vick'),
-(130, 2, 19, '2020-08-10 11:26:54', 'Essaie Bach'),
-(131, 3, 15, '2020-08-10 15:27:03', 'Essaie');
+(114, 2, 18, '2020-08-14 11:12:01', 'Essaie depuis mon mobile'),
+(115, 1, 18, '2020-08-17 21:34:38', 'Essaie avec commentaire'),
+(116, 4, 18, '2020-08-18 09:30:29', 'Un commentaire'),
+(117, 3, 18, '2020-08-18 09:30:43', 'Commentaire');
 
 -- --------------------------------------------------------
 
@@ -76,7 +79,7 @@ INSERT INTO `commentaires` (`id_post`, `id_acteurs`, `id_user`, `date`, `comment
 
 CREATE TABLE `utilisateurs` (
   `id_user` int(11) NOT NULL,
-  `date_inscription` datetime NOT NULL DEFAULT current_timestamp(),
+  `date_inscription` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `nom` varchar(255) NOT NULL,
   `prenom` varchar(255) NOT NULL,
   `username` varchar(255) NOT NULL,
@@ -90,9 +93,9 @@ CREATE TABLE `utilisateurs` (
 --
 
 INSERT INTO `utilisateurs` (`id_user`, `date_inscription`, `nom`, `prenom`, `username`, `password`, `question`, `reponse`) VALUES
-(15, '2020-07-30 14:14:25', 'Degroise', 'Dimitri', 'DimitriA', '$2y$10$5MCyTo.xOGZK4avjw3QcsusJoP5880ovl.JLKUDN3N1KHW5U1YwcG', 'Club de foot préférer ', '$2y$10$LaF7xoZ//SepAidihwA9wOQtpr5zro7ayyXKLmmCS2.3DpUzNPBgy'),
-(18, '2020-08-07 19:39:15', 'Bertorelli', 'Victorine', 'Vick', '$2y$10$7nlZCoRL4oeKpDKtF3HFCux0mdSK5qmdvb0lY.0PY1xglw3hdeLWy', 'Parfum préféré', '$2y$10$OyS4J3GNsZtQXSuDaezc3uX0H2a40sH/38boEzKYDS2lY7KdwJ1hy'),
-(19, '2020-08-08 11:19:43', 'Mouloude', 'Bachir', 'Bach', '$2y$10$nKLJL7ht79f.v8lqMo76Q.dmxxBxCC64C4sHnXGibgLg5j8UTwz..', 'Ville de naissance', '$2y$10$21oKGa2uwcq./7nmUUcWg.2VAbtNe0ROg1jApcDwU8mjs6Mc9bx1C');
+(18, '2020-08-07 16:55:08', 'Degroise', 'Dimitri', 'DimitriA', '$2y$10$C0Q32eVN3mafXhjrHXUvSOmY9VEdVu.4X/isvU5Q1rR4q5JcQNuYC', 'Club de foot préférer ', '$2y$10$7h3mvPIysvd2pG1tTI66kegU.ys0M3eiKRfQqDmCl4pzx.yuJmAeG'),
+(19, '2020-08-08 10:32:23', 'Bouchard', 'Gérard', 'Kuzin', '$2y$10$ZLn413.tFGglalBuAUEWueIV9YYGEXX3qiL3.zcmAH/ff494AF3kC', 'Quel est le modèle de ma BMW ?', '$2y$10$QjBkQFqCiZz4RZ3X3VKBQ.dxRBrQlXL.Y1CqfmrXfO9Cytz2pW3zK'),
+(20, '2020-08-08 18:35:33', 'Des', 'Elsa', 'elsa', '$2y$10$/qECi7vZbo60XBajE26vfuHff59EJMtHAjd6WGuw42TrHPcokB0UO', 'question ?', '$2y$10$utqO0cZsijYFsI2nywzl7uJen79Txejs22wMWyc/Ipk3SlVjWDPja');
 
 -- --------------------------------------------------------
 
@@ -112,14 +115,8 @@ CREATE TABLE `votes` (
 --
 
 INSERT INTO `votes` (`id_vote`, `id_user`, `id_acteur`, `vote`) VALUES
-(76, 15, 3, 2),
-(84, 18, 3, 1),
-(86, 18, 4, 2),
-(87, 18, 1, 2),
-(88, 15, 1, 1),
-(106, 15, 4, 2),
-(114, 18, 2, 2),
-(116, 15, 2, 1);
+(19, 18, 2, 1),
+(20, 18, 1, 1);
 
 --
 -- Index pour les tables déchargées
@@ -163,19 +160,19 @@ ALTER TABLE `acteurs`
 -- AUTO_INCREMENT pour la table `commentaires`
 --
 ALTER TABLE `commentaires`
-  MODIFY `id_post` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=132;
+  MODIFY `id_post` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=118;
 
 --
 -- AUTO_INCREMENT pour la table `utilisateurs`
 --
 ALTER TABLE `utilisateurs`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT pour la table `votes`
 --
 ALTER TABLE `votes`
-  MODIFY `id_vote` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=117;
+  MODIFY `id_vote` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
